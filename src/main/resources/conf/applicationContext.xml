@@ -6,4 +6,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd  http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <!-- 接连池 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/mysql?useUnicode=true&amp;characterEncoding=utf8" />
+        <property name="username" value="root" />
+        <property name="password" value="lizhen" />
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="conf/mybatiesconf.xml" />
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="log.dao.LogDao"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+
 </beans>

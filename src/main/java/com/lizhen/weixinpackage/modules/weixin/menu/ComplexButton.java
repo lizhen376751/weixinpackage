@@ -1,5 +1,4 @@
-package modules.weixin.menu;
-
+package com.lizhen.weixinpackage.modules.weixin.menu;
 
 import com.alibaba.fastjson.annotation.JSONField;
 

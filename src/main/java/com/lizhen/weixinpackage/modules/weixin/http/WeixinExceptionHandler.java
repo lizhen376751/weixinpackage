@@ -1,4 +1,4 @@
-package modules.weixin.http;
+package com.lizhen.weixinpackage.modules.weixin.http;
 
 /**
  * Created by Administrator on 2017/4/13.

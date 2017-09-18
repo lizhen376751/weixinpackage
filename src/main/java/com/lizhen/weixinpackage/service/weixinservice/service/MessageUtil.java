@@ -1,14 +1,14 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Article;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.NewsMessage;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
-import modules.weixin.weixinmessage.Article;
-import modules.weixin.weixinmessage.NewsMessage;
-import modules.weixin.weixinmessage.TextMessage;
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;

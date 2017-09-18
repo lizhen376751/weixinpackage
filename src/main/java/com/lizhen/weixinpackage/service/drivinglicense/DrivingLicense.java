@@ -1,4 +1,4 @@
-package service.drivinglicense;
+package com.lizhen.weixinpackage.service.drivinglicense;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;

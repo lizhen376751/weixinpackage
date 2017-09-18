@@ -1,4 +1,4 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;

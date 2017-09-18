@@ -1,4 +1,4 @@
-package modules.weixin.parammodule;
+package com.lizhen.weixinpackage.modules.weixin.parammodule;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package modules.weixin.weixinmessage;
+package com.lizhen.weixinpackage.modules.weixin.weixinmessage;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.io.Serializable;

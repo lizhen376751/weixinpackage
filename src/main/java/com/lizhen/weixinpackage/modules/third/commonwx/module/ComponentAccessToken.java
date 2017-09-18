@@ -1,4 +1,4 @@
-package modules.third.commonwx.module;
+package com.lizhen.weixinpackage.modules.third.commonwx.module;
 
 import java.io.Serializable;
 

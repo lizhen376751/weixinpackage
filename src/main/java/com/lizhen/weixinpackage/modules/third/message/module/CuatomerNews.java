@@ -1,4 +1,4 @@
-package modules.third.message.module;
+package com.lizhen.weixinpackage.modules.third.message.module;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by lizhen on 2017/8/23.
  */
 
-public class CuatomerNews extends CustomerBaseMessage  implements Serializable {
+public class CuatomerNews extends CustomerBaseMessage implements Serializable {
     /**
      * 客服的圖文消息
      */

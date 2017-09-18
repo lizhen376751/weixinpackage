@@ -1,4 +1,4 @@
-package modules.third.authorizationinfo.module;
+package com.lizhen.weixinpackage.modules.third.authorizationinfo.module;
 
 import java.io.Serializable;
 

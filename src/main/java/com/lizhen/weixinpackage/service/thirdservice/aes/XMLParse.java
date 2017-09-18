@@ -6,7 +6,7 @@
 
 // ------------------------------------------------------------------------
 
-package service.thirdservice.aes;
+package com.lizhen.weixinpackage.service.thirdservice.aes;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

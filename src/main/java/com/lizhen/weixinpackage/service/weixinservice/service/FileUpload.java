@@ -1,7 +1,7 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import com.alibaba.fastjson.JSONObject;
-import modules.weixin.weixinmessage.TeletextMessage;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.TeletextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

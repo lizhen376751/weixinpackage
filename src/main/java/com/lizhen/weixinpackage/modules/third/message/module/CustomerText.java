@@ -1,5 +1,4 @@
-package modules.third.message.module;
-
+package com.lizhen.weixinpackage.modules.third.message.module;
 
 import java.io.Serializable;
 

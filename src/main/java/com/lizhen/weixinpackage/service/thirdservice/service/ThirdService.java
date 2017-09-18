@@ -1,10 +1,16 @@
-package service.thirdservice.service;
+package com.lizhen.weixinpackage.service.thirdservice.service;
 
 
 import com.alibaba.fastjson.JSONObject;
-import modules.third.authorizationinfo.module.AuthorizationInfo;
-import modules.third.commonwx.module.*;
-import modules.weixin.weixinconfig.module.WeiXinConfig;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.*;
+import com.lizhen.weixinpackage.modules.weixin.weixinconfig.module.WeiXinConfig;
+import com.lizhen.weixinpackage.service.thirdservice.aes.AesException;
+import com.lizhen.weixinpackage.service.thirdservice.aes.WXBizMsgCrypt;
+import com.lizhen.weixinpackage.service.thirdservice.authorizationinfo.service.AuthorizationInfoService;
+import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
+import com.lizhen.weixinpackage.service.weixinservice.service.HttpUtils;
+import com.lizhen.weixinpackage.service.weixinservice.util.RedisUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -13,12 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.weixinservice.service.AllWeiXinService;
-import service.weixinservice.service.HttpUtils;
-import service.weixinservice.util.RedisUtil;
-import service.thirdservice.aes.AesException;
-import service.thirdservice.aes.WXBizMsgCrypt;
-import service.thirdservice.authorizationinfo.service.AuthorizationInfoService;
 
 import java.util.Date;
 import java.util.HashMap;

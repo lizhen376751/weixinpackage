@@ -1,9 +1,9 @@
-package modules.third.authorizationinfo.api;
+package com.lizhen.weixinpackage.modules.third.authorizationinfo.api;
 
 
-import modules.third.authorizationinfo.module.AuthorizationInfo;
-import modules.third.commonwx.module.ComponentAccessToken;
-import modules.third.commonwx.module.ComponentVerifyTicket;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentAccessToken;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentVerifyTicket;
 
 /**
  * 公众号凭据和授权信息接口

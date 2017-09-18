@@ -91,7 +91,7 @@
  * 需要导入架包commons-codec-1.9（或commons-codec-1.8等其他版本）
  * 官方下载地址：http://commons.apache.org/proper/commons-codec/download_codec.cgi
  */
-package service.thirdservice.aes;
+package com.lizhen.weixinpackage.service.thirdservice.aes;
 
 import org.apache.commons.codec.binary.Base64;
 import org.dom4j.Document;

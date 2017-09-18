@@ -1,4 +1,4 @@
-package modules.weixin.weixinmessage;
+package com.lizhen.weixinpackage.modules.weixin.weixinmessage;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

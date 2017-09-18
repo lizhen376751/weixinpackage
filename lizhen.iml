@@ -64,5 +64,12 @@
     <orderEntry type="library" name="Maven: commons-pool:commons-pool:20030825.183949" level="project" />
     <orderEntry type="library" name="Maven: org.apache.directory.studio:org.dom4j.dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.0.0-RC3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.16" level="project" />
+    <orderEntry type="library" name="Maven: commons-dbcp:commons-dbcp:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
   </component>
 </module>

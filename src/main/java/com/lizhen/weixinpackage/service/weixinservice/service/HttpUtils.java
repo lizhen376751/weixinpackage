@@ -1,9 +1,9 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
-import modules.weixin.http.HttpMethod;
-import modules.weixin.http.ParamterContentType;
-import modules.weixin.http.WeixinActionMethodDefine;
+import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
+import com.lizhen.weixinpackage.modules.weixin.http.ParamterContentType;
+import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;

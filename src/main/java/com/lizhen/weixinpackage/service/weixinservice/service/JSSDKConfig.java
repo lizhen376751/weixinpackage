@@ -1,10 +1,10 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
-import modules.weixin.parammodule.AccessToken;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.AccessToken;
+import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.weixinservice.accesstoken.service.AccessTokenService;
 
 import java.security.MessageDigest;
 import java.util.Formatter;

@@ -1,4 +1,4 @@
-package service.weixinservice.util;
+package com.lizhen.weixinpackage.service.weixinservice.util;
 
 /**
  * 第三方平台的相关参数

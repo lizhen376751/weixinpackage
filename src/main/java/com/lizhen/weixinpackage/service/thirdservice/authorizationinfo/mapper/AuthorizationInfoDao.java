@@ -1,7 +1,7 @@
-package service.thirdservice.authorizationinfo.mapper;
+package com.lizhen.weixinpackage.service.thirdservice.authorizationinfo.mapper;
 
 
-import modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
 
 /**
  * 授权信息的dao层

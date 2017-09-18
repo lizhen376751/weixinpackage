@@ -1,7 +1,7 @@
-package service.weixinservice.util;
+package com.lizhen.weixinpackage.service.weixinservice.util;
 
 
-import modules.weixin.parammodule.AccessToken;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

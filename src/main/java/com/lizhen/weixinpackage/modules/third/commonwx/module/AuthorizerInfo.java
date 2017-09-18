@@ -1,7 +1,7 @@
-package modules.third.commonwx.module;
+package com.lizhen.weixinpackage.modules.third.commonwx.module;
 
 
-import modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
 
 import java.io.Serializable;
 

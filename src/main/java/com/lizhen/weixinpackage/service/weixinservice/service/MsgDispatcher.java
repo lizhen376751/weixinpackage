@@ -1,9 +1,9 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
-import modules.weixin.weixinmessage.Article;
-import modules.weixin.weixinmessage.NewsMessage;
-import modules.weixin.weixinmessage.TextMessage;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Article;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.NewsMessage;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.TextMessage;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

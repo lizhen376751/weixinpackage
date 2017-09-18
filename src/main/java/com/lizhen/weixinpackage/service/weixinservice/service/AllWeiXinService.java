@@ -1,22 +1,22 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import com.alibaba.fastjson.JSONObject;
-import controller.weixinservice.AllWeiXinController;
-import modules.third.message.module.CuatomerNews;
-import modules.weixin.http.HttpMethod;
-import modules.weixin.http.WeixinActionMethodDefine;
-import modules.weixin.http.WeixinBaseParamter;
-import modules.weixin.menu.Menu;
-import modules.weixin.parammodule.*;
-import modules.weixin.weixinmessage.*;
+import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
+import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
+import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
+import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
+import com.lizhen.weixinpackage.modules.weixin.http.WeixinBaseParamter;
+import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.*;
+import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
+import com.lizhen.weixinpackage.service.weixinservice.util.PayCommonUtil;
+import com.lizhen.weixinpackage.service.weixinservice.util.XMLUtil;
 import org.jdom.JDOMException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.weixinservice.accesstoken.service.AccessTokenService;
-import service.weixinservice.util.PayCommonUtil;
-import service.weixinservice.util.XMLUtil;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

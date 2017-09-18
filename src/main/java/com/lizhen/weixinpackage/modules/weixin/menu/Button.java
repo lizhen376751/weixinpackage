@@ -1,4 +1,4 @@
-package modules.weixin.menu;
+package com.lizhen.weixinpackage.modules.weixin.menu;
 
 import java.io.Serializable;
 

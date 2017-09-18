@@ -1,17 +1,17 @@
-package service.thirdservice.authorizationinfo.service;
+package com.lizhen.weixinpackage.service.thirdservice.authorizationinfo.service;
 
 
-import modules.third.authorizationinfo.module.AuthorizationInfo;
-import modules.third.commonwx.module.ComponentAccessToken;
-import modules.third.commonwx.module.ComponentVerifyTicket;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentAccessToken;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentVerifyTicket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.weixinservice.service.AllWeiXinService;
-import service.weixinservice.service.HttpUtils;
-import service.thirdservice.authorizationinfo.mapper.AuthorizationInfoDao;
-import service.thirdservice.service.ThirdService;
+import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
+import com.lizhen.weixinpackage.service.weixinservice.service.HttpUtils;
+import com.lizhen.weixinpackage.service.thirdservice.authorizationinfo.mapper.AuthorizationInfoDao;
+import com.lizhen.weixinpackage.service.thirdservice.service.ThirdService;
 
 import java.util.Date;
 

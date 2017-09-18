@@ -1,4 +1,4 @@
-package modules.weixin.weixinconfig.module;
+package com.lizhen.weixinpackage.modules.weixin.weixinconfig.module;
 
 import java.io.Serializable;
 

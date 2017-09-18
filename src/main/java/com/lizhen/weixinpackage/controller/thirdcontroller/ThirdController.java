@@ -1,14 +1,19 @@
-package controller.thirdcontroller;
+package com.lizhen.weixinpackage.controller.thirdcontroller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import modules.third.authorizationinfo.module.AuthorizationInfo;
-import modules.third.commonwx.module.AESParams;
-import modules.third.commonwx.module.ComponentAccessToken;
-import modules.third.commonwx.module.ComponentVerifyTicket;
-import modules.third.commonwx.module.PreAuthCode;
-import modules.third.message.module.CustomerText;
-import modules.third.message.module.TextContent;
+import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.AESParams;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentAccessToken;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentVerifyTicket;
+import com.lizhen.weixinpackage.modules.third.commonwx.module.PreAuthCode;
+import com.lizhen.weixinpackage.modules.third.message.module.CustomerText;
+import com.lizhen.weixinpackage.modules.third.message.module.TextContent;
+import com.lizhen.weixinpackage.service.thirdservice.aes.AesException;
+import com.lizhen.weixinpackage.service.thirdservice.service.ThirdService;
+import com.lizhen.weixinpackage.service.weixinservice.util.ThirdUtil;
+import com.lizhen.weixinpackage.service.weixinservice.util.XMLUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -20,11 +25,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import service.thirdservice.service.ThirdService;
-import controller.weixinservice.AllWeiXinController;
-import service.weixinservice.util.ThirdUtil;
-import service.weixinservice.util.XMLUtil;
-import service.thirdservice.aes.AesException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +45,7 @@ public class ThirdController {
     /**
      * 日志打印
      */
-    private static Logger log = LoggerFactory.getLogger(ThirdService.class);
+    private static Logger log = LoggerFactory.getLogger(ThirdController.class);
 //====================================================================================================
 
     /**

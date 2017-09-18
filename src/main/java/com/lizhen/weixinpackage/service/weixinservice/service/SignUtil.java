@@ -1,4 +1,4 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

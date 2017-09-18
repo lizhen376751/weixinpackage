@@ -1,16 +1,16 @@
-package service.weixinservice.accesstoken.service;
+package com.lizhen.weixinpackage.service.weixinservice.accesstoken.service;
 
 import com.alibaba.fastjson.JSONObject;
-import modules.weixin.http.HttpMethod;
-import modules.weixin.http.WeixinActionMethodDefine;
-import modules.weixin.http.WeixinBaseParamter;
-import modules.weixin.parammodule.AccessToken;
+import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
+import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
+import com.lizhen.weixinpackage.modules.weixin.http.WeixinBaseParamter;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.weixinservice.accesstoken.mapper.AccessTokenDao;
-import service.weixinservice.service.HttpUtils;
+import com.lizhen.weixinpackage.service.weixinservice.accesstoken.mapper.AccessTokenDao;
+import com.lizhen.weixinpackage.service.weixinservice.service.HttpUtils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

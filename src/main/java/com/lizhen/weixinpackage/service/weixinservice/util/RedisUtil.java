@@ -1,4 +1,4 @@
-package service.weixinservice.util;
+package com.lizhen.weixinpackage.service.weixinservice.util;
 
 
 import redis.clients.jedis.Jedis;

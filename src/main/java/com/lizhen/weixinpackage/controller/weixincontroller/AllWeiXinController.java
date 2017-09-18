@@ -1,19 +1,19 @@
-package controller.weixinservice;
+package com.lizhen.weixinpackage.controller.weixincontroller;
 
 
-import modules.third.message.module.CuatomerNews;
-import modules.weixin.menu.Menu;
-import modules.weixin.parammodule.*;
-import modules.weixin.weixinmessage.ParamSendWeChat;
-import modules.weixin.weixinmessage.Template;
+import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
+import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.ParamSendWeChat;
+import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Template;
+import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
+import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
+import com.lizhen.weixinpackage.service.weixinservice.service.JSSDKConfig;
+import com.lizhen.weixinpackage.service.weixinservice.service.MsgDispatcher;
+import com.lizhen.weixinpackage.service.weixinservice.service.SignUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.weixinservice.accesstoken.service.AccessTokenService;
-import service.weixinservice.service.AllWeiXinService;
-import service.weixinservice.service.JSSDKConfig;
-import service.weixinservice.service.MsgDispatcher;
-import service.weixinservice.service.SignUtil;
 
 import java.util.HashMap;
 import java.util.Map;

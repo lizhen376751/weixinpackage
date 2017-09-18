@@ -1,4 +1,4 @@
-package service.weixinservice.service;
+package com.lizhen.weixinpackage.service.weixinservice.service;
 
 /**
  * 微信dubbo配置类

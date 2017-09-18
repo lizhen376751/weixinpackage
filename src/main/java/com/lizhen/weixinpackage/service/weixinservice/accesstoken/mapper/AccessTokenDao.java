@@ -1,7 +1,7 @@
-package service.weixinservice.accesstoken.mapper;
+package com.lizhen.weixinpackage.service.weixinservice.accesstoken.mapper;
 
 
-import modules.weixin.parammodule.AccessToken;
+import com.lizhen.weixinpackage.modules.weixin.parammodule.AccessToken;
 
 /**
  * 微信的接口dao层
