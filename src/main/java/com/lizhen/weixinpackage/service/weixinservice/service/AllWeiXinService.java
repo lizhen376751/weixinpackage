@@ -9,7 +9,7 @@ import com.lizhen.weixinpackage.modules.weixin.http.WeixinBaseParamter;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.*;
-import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
+import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.service.weixinservice.util.PayCommonUtil;
 import com.lizhen.weixinpackage.service.weixinservice.util.XMLUtil;
 import org.jdom.JDOMException;
@@ -40,11 +40,7 @@ public class AllWeiXinService {
      */
     @Autowired
     private FileUpload fileUpload;
-    /**
-     * 微信环境url配置
-     */
-    @Autowired
-    private URLConfig urlConfig;
+
     /**
      * token的service层
      */
@@ -159,15 +155,6 @@ public class AllWeiXinService {
      * @return template
      */
     public String sendTemplateMsg(String appid, String appSecret, Template template) {
-        String url = template.getUrl();
-        if (null != url && !"".equals(url) && !"null".equals(url)) {
-            int ahiTiXing = url.indexOf("ahiTiXing");
-            if (ahiTiXing >= 0) {
-                url = urlConfig.getWeixinURL() + url;
-                log.info("ahi检车的报告详情url为======" + url);
-                template.setUrl(url);
-            }
-        }
         //获取token
         AccessToken tokengetTicket = this.getTokengetTicket(appid, appSecret);
         String flag = "";
@@ -412,7 +399,8 @@ public class AllWeiXinService {
      * @param sweepPay 请求生成微信二维码的url
      * @return 微信二维码的url
      */
-    public String weixinpay(SweepPay sweepPay) {
+    public String
+    weixinpay(SweepPay sweepPay) {
         SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
         packageParams.put("appid", sweepPay.getAppid());
         packageParams.put("mch_id", sweepPay.getMchid());
@@ -422,7 +410,7 @@ public class AllWeiXinService {
         String strRandom = PayCommonUtil.buildRandom(4) + "";
         packageParams.put("nonce_str", strTime + strRandom);
         packageParams.put("body", sweepPay.getBody());
-        packageParams.put("out_trade_no", sweepPay.getOuttradeno());
+        packageParams.put("out_trade_no", sweepPay.getOuttradeno());  //商户订单号自定义只要保持唯一性即可
         packageParams.put("total_fee", sweepPay.getTotalfee());
         packageParams.put("spbill_create_ip", sweepPay.getSpbillcreateip());
         packageParams.put("notify_url", sweepPay.getNotifyurl());

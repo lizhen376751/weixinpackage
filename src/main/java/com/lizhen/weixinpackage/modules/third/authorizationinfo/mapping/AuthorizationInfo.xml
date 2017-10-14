@@ -1,0 +1,83 @@
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
+        <!--"http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.mapper.AuthorizationInfoDao">-->
+
+    <!--<resultMap type="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.module.AuthorizationInfo" id="AuthorizationInfo">-->
+        <!--<id property="id" column="id"></id>-->
+        <!--<result property="authorizerAppid" column="authorizerAppid"/>-->
+        <!--<result property="authorizerAccessToken" column="authorizerAccessToken"/>-->
+        <!--<result property="expiresIn" column="expiresIn"/>-->
+        <!--<result property="authorizerRefreshToken" column="authorizerRefreshToken"/>-->
+        <!--<result property="funcInfo" column="funcInfo"/>-->
+        <!--<result property="authorizationInfoTime" column="authorizationInfoTime"/>-->
+    <!--</resultMap>-->
+
+    <!--<insert id="addAuthorizationInfo" parameterType="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.module.AuthorizationInfo" useGeneratedKeys="true"-->
+            <!--keyProperty="id" flushCache="true">-->
+        <!--INSERT INTO-->
+        <!--DDWX_AuthorizationInfo (-->
+        <!--authorizerAppid,-->
+        <!--authorizerAccessToken,-->
+        <!--expiresIn,-->
+        <!--authorizerRefreshToken,-->
+        <!--funcInfo,-->
+        <!--authorizationInfoTime-->
+
+        <!--)-->
+        <!--VALUES (-->
+        <!--#{authorizerAppid},-->
+        <!--#{authorizerAccessToken},-->
+        <!--#{expiresIn},-->
+        <!--#{authorizerRefreshToken},-->
+        <!--#{funcInfo},-->
+         <!--#{authorizationInfoTime}-->
+        <!--)-->
+    <!--</insert>-->
+
+
+    <!--<select id="getAuthorizationInfo" parameterType="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.module.AuthorizationInfo" resultMap="AuthorizationInfo">-->
+        <!--select top 1-->
+        <!--id,-->
+        <!--authorizerAppid,-->
+        <!--authorizerAccessToken,-->
+        <!--expiresIn,-->
+        <!--authorizerRefreshToken,-->
+        <!--funcInfo,-->
+        <!--authorizationInfoTime-->
+        <!--from-->
+        <!--DDWX_AuthorizationInfo-->
+        <!--WHERE  authorizerAppid =  #{authorizerAppid}-->
+
+    <!--</select>-->
+
+
+
+
+    <!--<delete id="deletAuthorizationInfo" parameterType="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.module.AuthorizationInfo" flushCache="true">-->
+        <!--delete from DDWX_AuthorizationInfo-->
+        <!--where authorizerAppid =  #{authorizerAppid}-->
+
+    <!--</delete>-->
+
+
+    <!--<update id="updateAuthorizationInfo" parameterType="com.dudu.soa.weixindubbo.service.thirdservice.authorizationinfo.module.AuthorizationInfo" flushCache="true">-->
+        <!--update DDWX_AuthorizationInfo-->
+        <!--<trim prefix="set" suffixOverrides=",">-->
+            <!--<if test="authorizerAccessToken !=null and authorizerAccessToken != ''">-->
+                <!--authorizerAccessToken = #{authorizerAccessToken},-->
+            <!--</if>-->
+            <!--<if test="authorizerRefreshToken !=null and authorizerRefreshToken != ''">-->
+                <!--authorizerRefreshToken = #{authorizerRefreshToken},-->
+            <!--</if>-->
+            <!--<if test="authorizationInfoTime !=null and authorizationInfoTime != ''">-->
+                <!--authorizationInfoTime = #{authorizationInfoTime}-->
+            <!--</if>-->
+        <!--</trim>-->
+        <!--where-->
+        <!--authorizerAppid =  #{authorizerAppid}-->
+
+
+    <!--</update>-->
+
+
+<!--</mapper>-->

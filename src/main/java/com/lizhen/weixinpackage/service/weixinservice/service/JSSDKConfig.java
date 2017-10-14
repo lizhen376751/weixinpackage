@@ -2,7 +2,7 @@ package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
 import com.lizhen.weixinpackage.modules.weixin.parammodule.AccessToken;
-import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
+import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

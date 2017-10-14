@@ -7,7 +7,7 @@ import com.lizhen.weixinpackage.modules.third.commonwx.module.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinconfig.module.WeiXinConfig;
 import com.lizhen.weixinpackage.service.thirdservice.aes.AesException;
 import com.lizhen.weixinpackage.service.thirdservice.aes.WXBizMsgCrypt;
-import com.lizhen.weixinpackage.service.thirdservice.authorizationinfo.service.AuthorizationInfoService;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.service.AuthorizationInfoService;
 import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
 import com.lizhen.weixinpackage.service.weixinservice.service.HttpUtils;
 import com.lizhen.weixinpackage.service.weixinservice.util.RedisUtil;

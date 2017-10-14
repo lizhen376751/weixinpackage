@@ -6,7 +6,7 @@ import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.ParamSendWeChat;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Template;
-import com.lizhen.weixinpackage.service.weixinservice.accesstoken.service.AccessTokenService;
+import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
 import com.lizhen.weixinpackage.service.weixinservice.service.JSSDKConfig;
 import com.lizhen.weixinpackage.service.weixinservice.service.MsgDispatcher;
