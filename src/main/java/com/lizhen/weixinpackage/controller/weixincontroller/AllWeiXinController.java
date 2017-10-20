@@ -2,11 +2,11 @@ package com.lizhen.weixinpackage.controller.weixincontroller;
 
 
 import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
+import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.ParamSendWeChat;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Template;
-import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
 import com.lizhen.weixinpackage.service.weixinservice.service.JSSDKConfig;
 import com.lizhen.weixinpackage.service.weixinservice.service.MsgDispatcher;
@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -144,8 +146,6 @@ public class AllWeiXinController {
      */
 
     public String receivemessage(Map<String, String> map) {
-
-
         String message = MsgDispatcher.processMessage(map); //进入消息处理
         return message;
 
@@ -205,6 +205,15 @@ public class AllWeiXinController {
 
     public String weixinpay(SweepPay sweepPay) {
         return weChatTask.weixinpay(sweepPay);
+    }
+
+    /**
+     * 微信异步通知
+     * @param request 请求
+     * @param response 相应
+     */
+    public void weixinotify(HttpServletRequest request, HttpServletResponse response){
+         weChatTask.payNotifyUrl(request,response);
     }
 
     /**

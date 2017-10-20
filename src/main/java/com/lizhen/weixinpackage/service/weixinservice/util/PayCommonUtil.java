@@ -1,14 +1,11 @@
 package com.lizhen.weixinpackage.service.weixinservice.util;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedMap;
+import java.util.*;
 
 /**
- * Created by lzihen on 2017/5/19.
+ * 微信支付相关工具类
+ * Created by lizhen on 2017/5/19.
  */
 public final class PayCommonUtil {
     private PayCommonUtil() {
@@ -122,6 +119,41 @@ public final class PayCommonUtil {
         SimpleDateFormat outFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         String s = outFormat.format(now);
         return s;
+    }
+
+    /**
+     * 微信支付异步通知返给微信服务器
+     * @param return_code
+     * @param return_msg
+     * @return
+     */
+    public static String setXML(String return_code, String return_msg) {
+        return "<xml><return_code><![CDATA[" + return_code
+                + "]]></return_code><return_msg><![CDATA[" + return_msg
+                + "]]></return_msg></xml>";
+    }
+
+    /**
+     * 微信支付异步通知之后进行签名验证
+     * @param map
+     * @return
+     */
+    public static boolean verifyWeixinNotify(Map<Object, Object> map) {
+        SortedMap<Object, Object> parameterMap = new TreeMap<>();
+        String sign = (String) map.get("sign");
+        for (Object keyValue : map.keySet()) {
+            if (!keyValue.toString().equals("sign")) {
+                parameterMap.put(keyValue.toString(), map.get(keyValue));
+            }
+
+        }
+        String createSign = createSign("UTF-8", parameterMap, "商户秘钥的key");
+        if (createSign.equals(sign)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 

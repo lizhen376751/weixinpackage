@@ -3,13 +3,13 @@ package com.lizhen.weixinpackage.service.weixinservice.service;
 import com.alibaba.fastjson.JSONObject;
 import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
 import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
+import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
 import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
 import com.lizhen.weixinpackage.modules.weixin.http.WeixinBaseParamter;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.*;
-import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.service.weixinservice.util.PayCommonUtil;
 import com.lizhen.weixinpackage.service.weixinservice.util.XMLUtil;
 import org.jdom.JDOMException;
@@ -18,7 +18,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.SortedMap;
@@ -61,11 +65,11 @@ public class AllWeiXinService {
      * @return token
      */
 //    public static AccessToken getTokenTicket(String appid, String appSecret) {
-        //1.首先在redis查询是否存有token(直接查询店铺编码)
-        //2.如果没有直接获取存放在redis里面
-        //3.如果有的话直接判断时间,是否过期,
-        // 3.1过期的话重新获取,将之前的删除,并重新存入
-        //3.2如果没有过期直接取出来用
+    //1.首先在redis查询是否存有token(直接查询店铺编码)
+    //2.如果没有直接获取存放在redis里面
+    //3.如果有的话直接判断时间,是否过期,
+    // 3.1过期的话重新获取,将之前的删除,并重新存入
+    //3.2如果没有过期直接取出来用
 //        AccessToken tokengetTicket = new AccessToken();
 //        Jedis jedis = new Jedis("127.0.0.1", 6379);
 //        List<String> rsmap = jedis.hmget(appid, "token", "ticket", "expiresIn", "createTime");
@@ -399,8 +403,7 @@ public class AllWeiXinService {
      * @param sweepPay 请求生成微信二维码的url
      * @return 微信二维码的url
      */
-    public String
-    weixinpay(SweepPay sweepPay) {
+    public String weixinpay(SweepPay sweepPay) {
         SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
         packageParams.put("appid", sweepPay.getAppid());
         packageParams.put("mch_id", sweepPay.getMchid());
@@ -444,6 +447,38 @@ public class AllWeiXinService {
         log.info("第三步:微信扫码支付返回的url数据为=========" + urlCode);
         return urlCode;
     }
+
+    public void payNotifyUrl(HttpServletRequest request, HttpServletResponse response) {
+        InputStream inStream = null;
+        try {
+            inStream = request.getInputStream();
+            ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int len = 0;
+            while ((len = inStream.read(buffer)) != -1) {
+                outSteam.write(buffer, 0, len);
+            }
+            System.out.println("~~~~~~~~~~~~~~~~付款成功~~~~~~~~~");
+            String result = new String(outSteam.toByteArray(), "utf-8");// 获取微信调用我们notify_url的返回信息
+            Map<Object, Object> map = XMLUtil.doXMLParse(result);
+            if (map.get("result_code").toString().equalsIgnoreCase("SUCCESS")) {
+                boolean b = PayCommonUtil.verifyWeixinNotify(map);
+                if (b) {
+                    //订单处理
+                    response.getWriter().write(PayCommonUtil.setXML("SUCCESS", "OK")); // 告诉微信服务器，我收到信息了，不要在调用回调action了
+                }
+            }
+            outSteam.close();
+            inStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JDOMException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 
 
     /**
@@ -510,7 +545,7 @@ public class AllWeiXinService {
             String errcode = JSONObject.parseObject(sendPostJson).getString("errcode");
             if (!"".equals(errcode) && null != errcode && !"null".equals(errcode)) {
                 String errmsg = JSONObject.parseObject(sendPostJson).getString("errmsg");
-               log.debug("获取二维码错误异常errcode=" + errcode + ",errmsg=" + errmsg);
+                log.debug("获取二维码错误异常errcode=" + errcode + ",errmsg=" + errmsg);
             } else {
                 String ticket1 = JSONObject.parseObject(sendPostJson).getString("ticket");
                 String expireSeconds = JSONObject.parseObject(sendPostJson).getString("expire_seconds");

@@ -222,6 +222,14 @@
             <version>1.8.4</version>
         </dependency>
 
+        <!--支付宝支付 20170307171631 20160912220103 -->
+        <dependency>
+            <groupId>com.pentahohub.nexus</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>20150820220052</version>
+        </dependency>
+
+
     </dependencies>
 
 
