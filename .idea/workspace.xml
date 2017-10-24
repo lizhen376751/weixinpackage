@@ -2,110 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21771d5d-aae6-48bf-af18-2226aa198873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/mapping/AuthorizationInfo.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/mapping/AccessToken.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfoMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/conf.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/conf/spring-jdbc.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/authorizationinfo/api/ApiAuthorizationInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/authorizationinfo/module/AuthorizationInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/AESParams.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/AuthorizerInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/ComponentAccessToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/ComponentVerifyTicket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/FuncInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/FuncscopeCategory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/commonwx/module/PreAuthCode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/CuatomerArticlessss.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/CuatomerNews.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/CustomerBaseMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/CustomerText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/Dsasd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/NewsArticles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/third/message/module/TextContent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinconfig/module/WeiXinConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/Article.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/Articles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/BaseMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/Mpnews.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/NewsMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/ParamSendWeChat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/SendWeChat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/TeletextMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/Template.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/TemplateData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/modules/weixin/weixinmessage/TextMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/service/drivinglicense/DrivingLicense.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/service/drivinglicense/HttpUtils$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/service/drivinglicense/HttpUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/lib/commons-pool-20030825.183949.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/mapping/AuthorizationInfo.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/accesstoken/mapping/AccessToken.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/URLConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/authorizationinfo/api/ApiAuthorizationInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/authorizationinfo/module/AuthorizationInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/AESParams.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/AuthorizerInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/ComponentAccessToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/ComponentVerifyTicket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/FuncInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/FuncscopeCategory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/commonwx/module/PreAuthCode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/CuatomerArticlessss.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/CuatomerNews.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/CustomerBaseMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/CustomerText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/Dsasd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/NewsArticles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/third/message/module/TextContent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinconfig/module/WeiXinConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/Article.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/Articles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/BaseMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/Mpnews.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/NewsMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/ParamSendWeChat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/SendWeChat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/TeletextMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/Template.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/TemplateData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/modules/weixin/weixinmessage/TextMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/drivinglicense/DrivingLicense.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/drivinglicense/HttpUtils$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/drivinglicense/HttpUtils.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lizhen.iml" afterPath="$PROJECT_DIR$/lizhen.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/conf/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/conf/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/conf/spring-mvc.xml" afterPath="$PROJECT_DIR$/out/artifacts/lizhen_Web_exploded/WEB-INF/classes/conf/spring-mvc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/service/ThirdService.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/service/ThirdService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/CoreController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/CoreController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepH5Pay.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepH5Pay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepPay.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepPay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/JSSDKConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/JSSDKConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/conf/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/mybatiesconf.xml" afterPath="$PROJECT_DIR$/src/main/resources/conf/mybatiesconf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/conf/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/applicationContext.xml" afterPath="$PROJECT_DIR$/target/classes/conf/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/classes/conf/spring-mvc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/mapper/AuthorizationInfoDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/mapper/AuthorizationInfoDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/service/AuthorizationInfoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/accesstoken/mapper/AccessTokenDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/mapper/AccessTokenDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/accesstoken/service/AccessTokenService.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/WeiXinParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/WeiXinParam.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -125,12 +33,80 @@
       <file leaf-file-name="AllWeiXinController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="206" column="31" lean-forward="true" selection-start-line="206" selection-start-column="31" selection-end-line="206" selection-end-column="31" />
+            <state relative-caret-position="86">
+              <caret line="220" column="1" lean-forward="true" selection-start-line="220" selection-start-column="1" selection-end-line="227" selection-end-column="7" />
               <folding>
-                <element signature="e#5625#5626#0" expanded="true" />
-                <element signature="e#5678#5679#0" expanded="true" />
+                <element signature="e#5791#5792#0" expanded="true" />
+                <element signature="e#5844#5845#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllWeiXinService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#17539#17555#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessTokenService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllWeiXinServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="274" column="19" lean-forward="true" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getTokengetTicket#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#checkSignature#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#createMenu#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#sendTemplateMsg#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="e#6999#7013#0" expanded="true" />
+                <element signature="method#getOauthAccessToken#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#getWeiXinUserInfo#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#getWeiXinUserInfoByOpenid#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#receivemessage#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#sendGroupMessage#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#weixinpay#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#customerSmsSend#0;class#AllWeiXinServiceTest#0" expanded="false" />
+                <element signature="method#getTicket#0;class#AllWeiXinServiceTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeiXinParam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/WeiXinParam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,88 +121,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllWeiXinService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java">
+      <file leaf-file-name="WeiXinUserInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/WeiXinUserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="412" column="89" lean-forward="false" selection-start-line="412" selection-start-column="89" selection-end-line="412" selection-end-column="89" />
+            <state relative-caret-position="208">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logback-test.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/logback-test.xml">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="454">
+              <caret line="231" column="18" lean-forward="false" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/org/jdom/Document.class">
+      <file leaf-file-name="wxh5pay.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/wxpay/wxh5pay.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PayCommonUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2782">
-              <caret line="112" column="5" lean-forward="false" selection-start-line="96" selection-start-column="3" selection-end-line="112" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MD5Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-              <folding>
-                <element signature="e#11556#11557#0" expanded="true" />
-                <element signature="e#11610#11611#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorizationInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="-312">
+              <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -240,6 +159,7 @@
         <option value="Enum" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
         <option value="JUnit4 Test Class" />
       </list>
@@ -258,8 +178,16 @@
       <find>druid</find>
       <find>springframework</find>
       <find>configLocation</find>
-      <find>pareJsonDate</find>
       <find>getShort</find>
+      <find>alipay</find>
+      <find>sign</find>
+      <find>map.get(&quot;sign&quot;)</find>
+      <find>byteToHex</find>
+      <find>jsSDKSign</find>
+      <find>jsonToEntry</find>
+      <find>customerSendCard</find>
+      <find>pareJsonDate</find>
+      <find>getTicket</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -273,37 +201,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/AesException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/ByteGroup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/PKCS7Encoder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/SHA1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/WXBizMsgCrypt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/aes/XMLParse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/ThirdUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/XMLUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MapUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/SignUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/URLConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/WeChatCardService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/MsgDispatcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/module/AuthorizationInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/thirdcontroller/ThirdController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/message/module/CuatomerNews.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/api/ApiAuthorizationInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/commonwx/module/AuthorizerInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/mapper/AuthorizationInfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/service/ThirdService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/MessageUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/JSSDKConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/accesstoken/mapper/AccessTokenDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/accesstoken/service/AccessTokenService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/FileUpload.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/service/AuthorizationInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/spring-jdbc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/thirdservice/authorizationinfo/mapping/AuthorizationInfo.xml" />
@@ -311,7 +219,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/conf/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/conf.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/sda.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfoMapper.java" />
@@ -323,7 +230,28 @@
         <option value="$PROJECT_DIR$/src/main/resources/conf/mybatiesconf.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/as.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/CsUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/Views/zhifubaopay.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/UtilDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/ZhiFuBaoPay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/ZhiFuBaoPayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/AlipayConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/AlipayClientFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/sdad.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/JSSDKConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepH5Pay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepPay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/CoreController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/WeiXinParam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -488,37 +416,23 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="weixinpackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" value="lizhen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+              <option name="myItemId" value="lizhen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weixinpackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: jdom:jdom:1.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jdom-1.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="weixinpackage" />
@@ -722,6 +636,10 @@
               <option name="myItemId" value="weixinservice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -784,44 +702,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="weixin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weixinpackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weixinpackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weixinpackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weixin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parammodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -921,24 +801,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lizhen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lizhen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar!/" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -954,28 +820,32 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.lizhen.weixinpackage.service.weixinservice.service" />
       <recent name="com.lizhen.weixinpackage.modules.weixin.test" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ProjectPath\weixinpackage\src\main\webapp\Views\wxpay" />
       <recent name="F:\ProjectPath\weixinpackage\src\main\resources\META-INF" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="service.third" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lizhen.weixinpackage.controller.weixincontroller" />
+      <recent name="com.lizhen.weixinpackage.controller.zhifubao" />
       <recent name="third.service" />
       <recent name="modules.weixin.http.module.http" />
       <recent name="service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ProjectPath\weixinpackage\src\main\webapp\Views\wxpay" />
+      <recent name="F:\ProjectPath\weixinpackage\src\main\webapp\Views" />
       <recent name="F:\ProjectPath\lizhen\src\main\java\third" />
       <recent name="F:\ProjectPath\lizhen\src\main\webapp" />
       <recent name="F:\ProjectPath\lizhen\src\main\resources" />
-      <recent name="F:\ProjectPath\lizhen\src\main\java\modules\weixin\http\module\http" />
-      <recent name="F:\ProjectPath\lizhen\src\main\java\service" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Unnamed">
@@ -1506,15 +1376,22 @@
       <workItem from="1507867551926" duration="5108000" />
       <workItem from="1507895422467" duration="19000" />
       <workItem from="1507960422928" duration="1935000" />
-      <workItem from="1507978686751" duration="1927000" />
+      <workItem from="1507978686751" duration="2442000" />
+      <workItem from="1508209939062" duration="1604000" />
+      <workItem from="1508211592860" duration="4779000" />
+      <workItem from="1508314775758" duration="1211000" />
+      <workItem from="1508470957239" duration="9044000" />
+      <workItem from="1508638906234" duration="5393000" />
+      <workItem from="1508823017873" duration="913000" />
+      <workItem from="1508824049304" duration="14994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53337000" />
+    <option name="totallyTimeSpent" value="91790000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1525,16 +1402,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22043702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1542,13 +1421,11 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.4975" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33916554" sideWeight="0.4975" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1559,7 +1436,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java</url>
+          <line>187</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1567,22 +1453,49 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4940">
-          <caret line="206" column="29" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="29" />
+        <state relative-caret-position="416">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3224">
+          <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
           <folding>
-            <element signature="e#5625#5626#0" expanded="true" />
-            <element signature="e#5678#5679#0" expanded="true" />
+            <element signature="e#11556#11557#0" expanded="false" />
+            <element signature="e#11610#11611#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9880">
-          <caret line="402" column="4" lean-forward="false" selection-start-line="402" selection-start-column="4" selection-end-line="402" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="546">
+          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/org/jdom/Document.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1594,96 +1507,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/XMLUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/org/jdom/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2782">
-          <caret line="112" column="5" lean-forward="false" selection-start-line="96" selection-start-column="3" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3224">
-          <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
-          <folding>
-            <element signature="e#11556#11557#0" expanded="true" />
-            <element signature="e#11610#11611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4940">
-          <caret line="206" column="31" lean-forward="false" selection-start-line="206" selection-start-column="31" selection-end-line="206" selection-end-column="31" />
-          <folding>
-            <element signature="e#5625#5626#0" expanded="true" />
-            <element signature="e#5678#5679#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10504">
-          <caret line="426" column="22" lean-forward="false" selection-start-line="426" selection-start-column="22" selection-end-line="426" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/XMLUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/Config.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/CsUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/as.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/UtilDate.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/zhifubaopay.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1691,124 +1520,280 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/org/jdom/Document.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/pentahohub/nexus/alipay-sdk-java/20150820220052/alipay-sdk-java-20150820220052.jar!/com/alipay/api/response/AlipayTradeRefundResponse.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/ZhiFuBaoPayController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/PayCommonUtil.java" />
+    <entry file="jar://F:/jdk/jdk1.8.0_60/src.zip!/java/util/SortedMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2782">
-          <caret line="112" column="5" lean-forward="false" selection-start-line="96" selection-start-column="3" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="226">
+          <caret line="112" column="17" lean-forward="false" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/ThirdUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="-855">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/MessageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/FileUpload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/baidumap.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1504604370451" expanded="true" signature="1720:1758" ph="..." />
+            <marker date="1504604370451" expanded="true" signature="1815:1891" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/fenye.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/AccessToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1092#1093#0" expanded="false" />
+            <element signature="e#1122#1123#0" expanded="false" />
+            <element signature="e#1400#1401#0" expanded="false" />
+            <element signature="e#1433#1434#0" expanded="false" />
+            <element signature="e#1747#1748#0" expanded="false" />
+            <element signature="e#1784#1785#0" expanded="false" />
+            <element signature="e#2110#2111#0" expanded="false" />
+            <element signature="e#2143#2144#0" expanded="false" />
+            <element signature="e#2459#2460#0" expanded="false" />
+            <element signature="e#2493#2494#0" expanded="false" />
+            <element signature="e#2815#2816#0" expanded="false" />
+            <element signature="e#2852#2853#0" expanded="false" />
+            <element signature="e#3197#3198#0" expanded="false" />
+            <element signature="e#3235#3236#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/AlipayClientFactory.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/zhifubao/AlipayConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/JSSDKConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1108#1109#0" expanded="false" />
+            <element signature="e#1159#1160#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/test/UserInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1507984428561" expanded="true" signature="709:825" ph="select from user_info" />
+            <marker date="1507984428561" expanded="true" signature="919:990" ph="delete from " />
+            <marker date="1507984428561" expanded="true" signature="1083:1263" ph="insert into user_info... " />
+            <marker date="1507984428561" expanded="true" signature="2183:2490" ph="update user_... " />
+            <marker date="1507984428561" expanded="true" signature="2595:2754" ph="update user_... " />
+            <marker date="1507984428561" expanded="true" signature="3328:3533" ph="select u.id,... user_info" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/weixinconfig/module/WeiXinConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1219">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepH5Pay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+          <folding>
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2116#2117#0" expanded="true" />
+            <element signature="e#2156#2157#0" expanded="true" />
+            <element signature="e#2191#2192#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2344#2345#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2420#2421#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/SweepPay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+          <folding>
+            <element signature="e#3025#3026#0" expanded="false" />
+            <element signature="e#3054#3055#0" expanded="false" />
+            <element signature="e#3149#3150#0" expanded="false" />
+            <element signature="e#3185#3186#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3224">
-          <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
-          <folding>
-            <element signature="e#11556#11557#0" expanded="true" />
-            <element signature="e#11610#11611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="183" column="25" lean-forward="false" selection-start-line="183" selection-start-column="25" selection-end-line="183" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/mapper/AccessTokenDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/XMLUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/org/jdom/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="792">
+          <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/PayCommonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2782">
-          <caret line="112" column="5" lean-forward="false" selection-start-line="96" selection-start-column="3" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="3146">
+          <caret line="140" column="26" lean-forward="false" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/third/authorizationinfo/service/AuthorizationInfoService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/XMLUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="520">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/MapUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/logback-test.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/SignUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/MsgDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-866">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/CoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2597">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/wxpay/weixincodepay.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Views/wxpay/wxh5pay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="231" column="18" lean-forward="false" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/parammodule/WeiXinUserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1821,32 +1806,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/HttpUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/modules/weixin/accesstoken/service/AccessTokenService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding>
-            <element signature="e#11556#11557#0" expanded="true" />
-            <element signature="e#11610#11611#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/util/WeiXinParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/controller/weixincontroller/AllWeiXinController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="206" column="31" lean-forward="true" selection-start-line="206" selection-start-column="31" selection-end-line="206" selection-end-column="31" />
+        <state relative-caret-position="86">
+          <caret line="220" column="1" lean-forward="true" selection-start-line="220" selection-start-column="1" selection-end-line="227" selection-end-column="7" />
           <folding>
-            <element signature="e#5625#5626#0" expanded="true" />
-            <element signature="e#5678#5679#0" expanded="true" />
+            <element signature="e#5791#5792#0" expanded="true" />
+            <element signature="e#5844#5845#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="412" column="89" lean-forward="false" selection-start-line="412" selection-start-column="89" selection-end-line="412" selection-end-column="89" />
+        <state relative-caret-position="444">
+          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#17539#17555#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lizhen/weixinpackage/service/weixinservice/service/AllWeiXinServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="274" column="19" lean-forward="true" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getTokengetTicket#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#checkSignature#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#createMenu#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#sendTemplateMsg#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="e#6999#7013#0" expanded="true" />
+            <element signature="method#getOauthAccessToken#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#getWeiXinUserInfo#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#getWeiXinUserInfoByOpenid#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#receivemessage#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#sendGroupMessage#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#weixinpay#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#customerSmsSend#0;class#AllWeiXinServiceTest#0" expanded="false" />
+            <element signature="method#getTicket#0;class#AllWeiXinServiceTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
       </provider>
