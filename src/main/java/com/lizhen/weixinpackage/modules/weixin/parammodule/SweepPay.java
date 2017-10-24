@@ -20,7 +20,7 @@ public class SweepPay implements Serializable {
 //    9.通知地址 notify_url 是 String(256) http://www.weixin.qq.com/wxpay/pay.php 异步接收微信支付结果通知的回调地址，通知url必须为外网可访问的url，不能携带参数。
 //    10.交易类型 trade_type 是 String(16) JSAPI 取值如下：JSAPI，NATIVE，APP等，说明详见参数规定
 //    11.商品ID product_id 否 String(32) 12235413214070356458058 trade_type=NATIVE时（即扫码支付），此参数必传。此参数为二维码中包含的商品ID，商户自行定义。
-
+//    12.用户标识 openid 否 String(128) oUpF8uMuAJO_M2pxb1Q9zNjWeS6o trade_type=JSAPI时（即公众号支付），此参数必传
     /**
      * 微信的appid
      */
@@ -52,7 +52,7 @@ public class SweepPay implements Serializable {
      */
     private String spbillcreateip;
     /**
-     * 回调接口(支付成功后，回调地址)
+     * 回调接口(支付成功后，回调地址,只要进入该项目的微信支付异步通知的地址即可)
      */
     private String notifyurl;
     /**
@@ -66,6 +66,11 @@ public class SweepPay implements Serializable {
      */
     private String productid;
 
+    /**
+     * 用户标识 openid trade_type=JSAPI时（即公众号支付），此参数必传
+     */
+    private String openid;
+
 
     /**
      * SweepPay(微信扫码支付请求url(生成二维码)实体类) 字符串形式
@@ -74,11 +79,41 @@ public class SweepPay implements Serializable {
      */
     @Override
     public String toString() {
-        return "appid:" + appid + ",mchid:" + mchid + ",key:" + key + ",totalfee:" + totalfee + ",body:" + body + ",outtradeno:" + outtradeno
-                + ",spbillcreateip:" + spbillcreateip + ",notifyurl:" + notifyurl + ",tradetype:" + tradetype + ",productid:" + productid;
+        return "SweepPay{" +
+                "appid='" + appid + '\'' +
+                ", mchid='" + mchid + '\'' +
+                ", key='" + key + '\'' +
+                ", totalfee='" + totalfee + '\'' +
+                ", body='" + body + '\'' +
+                ", outtradeno='" + outtradeno + '\'' +
+                ", spbillcreateip='" + spbillcreateip + '\'' +
+                ", notifyurl='" + notifyurl + '\'' +
+                ", tradetype='" + tradetype + '\'' +
+                ", productid='" + productid + '\'' +
+                ", openid='" + openid + '\'' +
+                '}';
     }
 
     /**
+     * openid
+     *
+     * @return
+     */
+    public String getOpenid() {
+        return openid;
+    }
+
+    /**
+     * openid
+     * @param openid
+     */
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
+
+    /**
+
      * 获取 微信的appid
      *
      * @return appid 微信的appid

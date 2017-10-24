@@ -201,6 +201,7 @@ public class AllWeiXinController {
      *
      * @param sweepPay 请求生成微信二维码的url
      * @return 微信二维码的url
+     * 接口文档 : https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_1
      */
 
     public String weixinpay(SweepPay sweepPay) {
@@ -208,9 +209,10 @@ public class AllWeiXinController {
     }
 
     /**
-     * 微信异步通知
+     * 微信异步通知地址
      * @param request 请求
      * @param response 相应
+     * 接口文档:https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_7
      */
     public void weixinotify(HttpServletRequest request, HttpServletResponse response){
          weChatTask.payNotifyUrl(request,response);
@@ -219,25 +221,17 @@ public class AllWeiXinController {
     /**
      * 客服接口-发送消息
      *
-     * @param token 第三方开发平台的token
-     * @param json  消息转换为json类型
+     * @param appId 公众号的appid
+     * @param appSecret  公众号的appsecret
+     * @param cuatomerNews 消息实体类
      * @return 发送成功后的回调
      */
 
-    public String customerSmsSend(String token, String json) {
-        return weChatTask.customerSmsSend(token, json);
+    public String customerSmsSend(String appId, String appSecret, CuatomerNews cuatomerNews) {
+        return weChatTask.customerSmsSend(appId,appSecret, cuatomerNews);
     }
 
-    /**
-     * 客服发送图文消息(电子优惠券的详情url做了处理)
-     *
-     * @param cuatomerNews 图文消息
-     * @return success或者错误原因
-     */
 
-    public String customerSendCard(String appId, String xAppSecret, CuatomerNews cuatomerNews) {
-        return weChatTask.customerSendCard(appId, xAppSecret, cuatomerNews);
-    }
 
     /**
      * 生成微信的临时二维码

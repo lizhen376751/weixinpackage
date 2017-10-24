@@ -20,13 +20,11 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.net.URLEncoder;
+import java.util.*;
 
 
 /**
@@ -100,6 +98,20 @@ public class AllWeiXinService {
 //        }
 //        return tokengetTicket;
 //    }
+    //配置验证
+
+    /**
+     * 签名来验证配置
+     * @param signature 按一定规则生成的签名字符串
+     * @param timestamp 日期戳
+     * @param nonce 随机字符串
+     * @param token 令牌
+     * @return true 或者 false
+     */
+    public boolean checkSignature(String signature, String timestamp, String nonce, String token) {
+        boolean b = SignUtil.checkSignature(signature, timestamp, nonce, token);
+        return b;
+    }
 
     /**
      * 获取开发者的token和jssdk的jsapiticket
@@ -197,14 +209,12 @@ public class AllWeiXinService {
      */
     public OauthOpenIdToken getOauthAccessToken(String code, String appid, String appSecret) {
         try {
-            WeixinActionMethodDefine weixinActionMethodDefine = new WeixinActionMethodDefine()
-                    .setHttpMethod(HttpMethod.GET)
-                    .setIsNeedAccssToken(false)
-                    .setUri("/sns/oauth2/access_token")
-                    .putActionConfigParamter("grant_type", "authorization_code")
-                    .putActionConfigParamter("code", code)
-                    .setWeixinBaseParamter(new WeixinBaseParamter().setAppid(appid).setSecret(appSecret));
-            String request = HttpUtils.request(weixinActionMethodDefine);
+            Map<String, String> params = new HashMap<>();
+            params.put("appid", appid);
+            params.put("secret", appSecret);
+            params.put("code", code);
+            params.put("grant_type", "authorization_code");
+            String request = HttpUtils.sendGet("https://api.weixin.qq.com/sns/oauth2/access_token", params);
             log.info("获取openid=========================" + request);
             OauthOpenIdToken oauthOpenIdTokennew = new OauthOpenIdToken();
             String expiresin = pareJsonDate(request, "expires_in");
@@ -216,9 +226,7 @@ public class AllWeiXinService {
             oauthOpenIdTokennew.setRefreshToken(pareJsonDate(request, "refresh_token"));
             oauthOpenIdTokennew.setAccessToken(pareJsonDate(request, "access_token"));
             return oauthOpenIdTokennew;
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         //TODO 获取基本信息
@@ -236,28 +244,20 @@ public class AllWeiXinService {
      * @throws Exception 异常
      */
     public WeiXinUserInfo getWeiXinUserInfo(String code, String appid, String secret) {
-        //1.获取开发者的access_token
-        AccessToken tokengetTicket = null;
+
         try {
-            tokengetTicket = this.getTokengetTicket(appid, secret);
+            //1.获取开发者的access_token
+            AccessToken tokengetTicket = this.getTokengetTicket(appid, secret);
             String token = tokengetTicket.getToken();
             //2.获取openid
             OauthOpenIdToken oauthAccessToken = this.getOauthAccessToken(code, appid, secret);
             String openId = oauthAccessToken.getOpenId();
-            WeixinActionMethodDefine weixinActionMethodDefine = new WeixinActionMethodDefine()
-                    .setHttpMethod(HttpMethod.GET)
-                    .setIsNeedAppid(false)
-                    .setUri("/cgi-bin/user/info")
-                    .putActionConfigParamter("lang", "zh_CN")
-                    .putActionConfigParamter("openid", openId)
-                    .setWeixinBaseParamter(new WeixinBaseParamter().setAppid(appid).setSecret(secret).setToken(token));
-            String s = HttpUtils.request(weixinActionMethodDefine);
+            String url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token="+token+"&openid="+openId+"&lang=zh_CN";
+            String s = HttpUtils.sendGet(url,null);
             //获取用户的昵称
             WeiXinUserInfo weiXinUserInfo = jsonToEntry(s);
             return weiXinUserInfo;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -414,11 +414,18 @@ public class AllWeiXinService {
         packageParams.put("nonce_str", strTime + strRandom);
         packageParams.put("body", sweepPay.getBody());
         packageParams.put("out_trade_no", sweepPay.getOuttradeno());  //商户订单号自定义只要保持唯一性即可
-        packageParams.put("total_fee", sweepPay.getTotalfee());
+        packageParams.put("total_fee", sweepPay.getTotalfee()); //这个参数是以分为单位,账单中是以元为单位
         packageParams.put("spbill_create_ip", sweepPay.getSpbillcreateip());
-        packageParams.put("notify_url", sweepPay.getNotifyurl());
-        packageParams.put("trade_type", sweepPay.getTradetype());
-        //签名 sign 通过签名算法计算得出的签名值，详见签名生成算法()
+        packageParams.put("notify_url", sweepPay.getNotifyurl()); //微信异步通知,填入下面的方法即可
+        packageParams.put("trade_type", sweepPay.getTradetype());  //JSAPI(页面调用h5发起)，NATIVE(扫码支付,code_url返回一个二维码)
+        packageParams.put("openid", sweepPay.getOpenid()); //trade_type为JSAPI时,必须传入
+        try {
+            packageParams.put("attach", URLEncoder.encode("SellerId=" + "某个变量", "GBK")); //加入此参数,后面异步接收时就可以原样获取到
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        //签名 sign 第一次的签名
+        //TODO 注意除了sign之外所有的参数必须放在创建签名中
         String sign = PayCommonUtil.createSign("UTF-8", packageParams, sweepPay.getKey());
         packageParams.put("sign", sign);
 
@@ -445,54 +452,79 @@ public class AllWeiXinService {
 
         String urlCode = (String) map.get("code_url");
         log.info("第三步:微信扫码支付返回的url数据为=========" + urlCode);
+
+        //如果是二维码扫码支付只需要获取到urlCode即可,以下可不需要
+        SortedMap<Object, Object> payMap = new TreeMap<Object, Object>();
+        String package1 = "prepay_id=" + map.get("prepay_id");
+        payMap.put("appId", sweepPay.getAppid());
+        String timeStamp = (new Date().getTime() / 1000) + "";
+        payMap.put("timeStamp", timeStamp);
+        payMap.put("nonceStr", strTime + strRandom);
+        payMap.put("signType", "MD5");
+        payMap.put("package", package1);
+        // 第二次生成签名 ,以上这些参数需要传入到前端
+        String paySign = PayCommonUtil.createSign("UTF-8", payMap, sweepPay.getKey());
+        SweepH5Pay sweepH5Pay = new SweepH5Pay();
+        sweepH5Pay.setAppId(sweepPay.getAppid());
+        sweepH5Pay.setNonceStr(strTime + strRandom);
+        sweepH5Pay.setPackage1(package1);
+        sweepH5Pay.setTimeStamp(timeStamp);
+        sweepH5Pay.setPaySign(paySign);
+//        return sweepH5Pay; //如果h5发起支付返回这个实体类
         return urlCode;
     }
 
+    /**
+     * 微信异步通知,进行后端处理
+     *
+     * @param request  请求
+     * @param response 相应
+     */
     public void payNotifyUrl(HttpServletRequest request, HttpServletResponse response) {
-        InputStream inStream = null;
+        String inputLine;
+        String result = ""; //获取到的xml信息
+        Map<Object, Object> map = null;
         try {
-            inStream = request.getInputStream();
-            ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int len = 0;
-            while ((len = inStream.read(buffer)) != -1) {
-                outSteam.write(buffer, 0, len);
+            while ((inputLine = request.getReader().readLine()) != null) {
+                result += inputLine;
             }
-            System.out.println("~~~~~~~~~~~~~~~~付款成功~~~~~~~~~");
-            String result = new String(outSteam.toByteArray(), "utf-8");// 获取微信调用我们notify_url的返回信息
-            Map<Object, Object> map = XMLUtil.doXMLParse(result);
+            map = XMLUtil.doXMLParse(result);
+            //判断使否返回通讯成功的信息
             if (map.get("result_code").toString().equalsIgnoreCase("SUCCESS")) {
+                //验证签名是否正确
                 boolean b = PayCommonUtil.verifyWeixinNotify(map);
                 if (b) {
-                    //订单处理
+                    //TODO 订单处理,例如将相关数据存入到数据库中
                     response.getWriter().write(PayCommonUtil.setXML("SUCCESS", "OK")); // 告诉微信服务器，我收到信息了，不要在调用回调action了
                 }
             }
-            outSteam.close();
-            inStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JDOMException e) {
+            request.getReader().close();
+            response.getOutputStream().close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
 
-
     /**
-     * 客服接口-发消息
+     * 客服接口-发送消息
      *
-     * @param token 公众号的token
-     * @param json  消息转换为json类型
+     * @param appId 公众号的appid
+     * @param appSecret  公众号的appsecret
+     * @param cuatomerNews 消息实体类
      * @return 发送成功后的回调
      */
-    public String customerSmsSend(String token, String json) {
+    public String customerSmsSend(String appId, String appSecret, CuatomerNews cuatomerNews) {
+        AccessToken tokenByCode = allWeiXinRquest.getTokenByCode(appId, appSecret);
+        String token = "";
+        if (null != tokenByCode) {
+            token = tokenByCode.getToken();
+        }
+        String toJSONString = JSONObject.toJSONString(cuatomerNews);
         String url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token;
         String jsonResult = "";
         try {
-            jsonResult = HttpUtils.sendPostJson(url, json);
+            jsonResult = HttpUtils.sendPostJson(url, toJSONString);
             String errcode = JSONObject.parseObject(jsonResult).getString("errcode");
             String errmsg = JSONObject.parseObject(jsonResult).getString("errmsg");
             //如果错误码为空
@@ -509,22 +541,7 @@ public class AllWeiXinService {
         return jsonResult;
     }
 
-    /**
-     * 客服发送图文消息(电子优惠券的详情url做了处理)
-     *
-     * @param cuatomerNews 图文消息
-     * @return success或者错误原因
-     */
-    public String customerSendCard(String appId, String xAppSecret, CuatomerNews cuatomerNews) {
-        AccessToken tokenByCode = allWeiXinRquest.getTokenByCode(appId, xAppSecret);
-        String token = "";
-        if (null != tokenByCode) {
-            token = tokenByCode.getToken();
-        }
-        String toJSONString = JSONObject.toJSONString(cuatomerNews);
-        String customerSmsSend = this.customerSmsSend(token, toJSONString);
-        return customerSmsSend;
-    }
+
 
     /**
      * 生成微信的临时二维码

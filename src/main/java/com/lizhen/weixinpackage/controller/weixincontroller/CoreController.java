@@ -1,15 +1,16 @@
-package com.dudu.weixin.control;
+package com.lizhen.weixinpackage.controller.weixincontroller;
 
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.dudu.soa.weixindubbo.weixin.http.api.ApiAllWeiXiRequest;
-import com.dudu.weixin.util.Constant;
+import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
+import com.lizhen.weixinpackage.service.weixinservice.service.MsgDispatcher;
+import com.lizhen.weixinpackage.service.weixinservice.service.SignUtil;
+import com.lizhen.weixinpackage.service.weixinservice.util.WeiXinParam;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,11 +37,12 @@ public class CoreController extends HttpServlet {
      * 日志打印
      */
     private static Logger log = LoggerFactory.getLogger(CoreController.class);
+
     /**
-     * 引入消息处理接口
+     * 引入微信总服务
      */
-    @Reference(timeout = 300000)
-    private ApiAllWeiXiRequest apiAllWeiXiRequest;
+    @Autowired
+    private AllWeiXinService allWeiXinService;
 
     /**
      * @param request  请求
@@ -73,7 +75,7 @@ public class CoreController extends HttpServlet {
          * 请原样返回echostr参数内容，则接入生效，成为开发者成功，否则接入失败。
          *
          */
-        boolean b = apiAllWeiXiRequest.checkSignature(signature, timestamp, nonce, Constant.TOKEN);
+        boolean b = SignUtil.checkSignature(signature, timestamp, nonce, WeiXinParam.token);
         if (b) {
             out.print(echostr);
             log.info("配置验证=================================" + b);
@@ -90,57 +92,48 @@ public class CoreController extends HttpServlet {
      */
     @RequestMapping(value = "/urlconfig", method = RequestMethod.POST)
     public void doPost(PrintWriter out, HttpServletRequest request, HttpServletResponse response) {
-        String lmcode = request.getParameter("lmcode");
-        String shopcode = request.getParameter("shopcode");
-        // 将解析结果存储在HashMap中
-        Map<String, String> map = new HashMap<String, String>();
-        // 从request中取得输入流
-        InputStream inputStream = null;
         try {
-            inputStream = request.getInputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // 读取输入流
-        SAXReader reader = new SAXReader();
-        Document document = null;
-        try {
-            document = reader.read(inputStream);
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        }
-        // 得到xml根元素
-        Element root = document.getRootElement();
-        // 得到根元素的所有子节点
-        List<Element> elementList = root.elements();
+            String lmcode = request.getParameter("lmcode");
+            String shopcode = request.getParameter("shopcode");
+            // 将解析结果存储在HashMap中
+            Map<String, String> map = new HashMap<String, String>();
+            // 从request中取得输入流
+            InputStream inputStream = request.getInputStream();
 
-        // 遍历所有子节点
-        for (Element e : elementList) {
-            map.put(e.getName(), e.getText());
-        }
-        map.put("lmcode", lmcode);
-        map.put("shopcode", shopcode);
-        log.info("店铺编码=====" + shopcode + "===联盟编码=====" + lmcode);
-        log.info("接受消息为==========================" + map);
-        String receivemessage = apiAllWeiXiRequest.receivemessage(map);
-        log.info("发送消息为==========================" + receivemessage);
-        out.println(receivemessage);
-        if (map.get("Event").equals("SCAN")) {
-            //如果通过二维码的事件关注之后,需要重新发送一条数据
-            String receivemessage1 = apiAllWeiXiRequest.receivemessage(map);
-            log.info("二维码关注事件发送消息为==========================" + receivemessage);
-            if (!"".equals(receivemessage1) && !"null".equals(receivemessage1) && null != receivemessage1) {
-                out.println(receivemessage);
+            // 读取输入流
+            SAXReader reader = new SAXReader();
+            Document document = reader.read(inputStream);
+
+            // 得到xml根元素
+            Element root = document.getRootElement();
+            // 得到根元素的所有子节点
+            List<Element> elementList = root.elements();
+
+            // 遍历所有子节点
+            for (Element e : elementList) {
+                map.put(e.getName(), e.getText());
             }
-        }
-        out.close();
-        // 释放资源
-        try {
+            map.put("lmcode", lmcode);
+            map.put("shopcode", shopcode);
+            log.info("店铺编码=====" + shopcode + "===联盟编码=====" + lmcode);
+            log.info("接受消息为==========================" + map);
+            String receivemessage = MsgDispatcher.processMessage(map);
+            log.info("发送消息为==========================" + receivemessage);
+            out.println(receivemessage);
+            if (map.get("Event").equals("SCAN")) {
+                //如果通过二维码的事件关注之后,需要重新发送一条数据
+                String receivemessage1 = MsgDispatcher.processMessage(map);
+                log.info("二维码关注事件发送消息为==========================" + receivemessage);
+                if (!"".equals(receivemessage1) && !"null".equals(receivemessage1) && null != receivemessage1) {
+                    out.println(receivemessage);
+                }
+            }
+            out.close();
+            // 释放资源
             inputStream.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        inputStream = null;
 
 
     }

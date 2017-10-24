@@ -29,4 +29,6 @@ Thumbs.db
 
 /.idea/compiler.xml
 out/artifacts
-
+out/
+lizhen.iml
+.idea
