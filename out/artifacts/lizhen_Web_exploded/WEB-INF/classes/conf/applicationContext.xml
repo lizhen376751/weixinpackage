@@ -7,16 +7,5 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd  http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 
-    <import resource="spring-jdbc.xml"/>
-
-    <!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-        <!--&lt;!&ndash;<property name="dataSource" ref="dataSource" />&ndash;&gt;-->
-        <!--<property name="configLocation" value="conf/mybatiesconf.xml" />-->
-    <!--</bean>-->
-
-    <!--<bean class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-        <!--<property name="mapperInterface" value="log.dao.LogDao"></property>-->
-        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>-->
-    <!--</bean>-->
 
 </beans>

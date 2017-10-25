@@ -1,7 +1,6 @@
 package com.lizhen.weixinpackage.controller.weixincontroller;
 
 
-import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
 import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
@@ -223,12 +222,12 @@ public class AllWeiXinController {
      *
      * @param appId 公众号的appid
      * @param appSecret  公众号的appsecret
-     * @param cuatomerNews 消息实体类
+     * @param toJSONString 消息实体类 (无论什么类型的消息可以转换成json类型的)
      * @return 发送成功后的回调
      */
 
-    public String customerSmsSend(String appId, String appSecret, CuatomerNews cuatomerNews) {
-        return weChatTask.customerSmsSend(appId,appSecret, cuatomerNews);
+    public String customerSmsSend(String appId, String appSecret, String toJSONString) {
+        return weChatTask.customerSmsSend(appId,appSecret, toJSONString);
     }
 
 

@@ -2,11 +2,7 @@ package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
-import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
 import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
-import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
-import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
-import com.lizhen.weixinpackage.modules.weixin.http.WeixinBaseParamter;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.*;
@@ -318,31 +314,22 @@ public class AllWeiXinService {
      * @param appSecret 微信的 appSecret
      */
     public void getTicket(String appid, String appSecret) {
+        try {
         //获取token实体
         AccessToken tokengetTicket = getTokengetTicket(appid, appSecret);
         //在token实体中获取日期戳
         long createTime = tokengetTicket.getCreateTime();
         //在token实体中获取token
         String token = tokengetTicket.getToken();
-        WeixinActionMethodDefine weixinActionMethodDefine = new WeixinActionMethodDefine()
-                .setHttpMethod(HttpMethod.GET)
-                .setIsNeedAppid(false)
-                .setUri("/cgi-bin/ticket/getticket")
-                .putActionConfigParamter("type", "jsapi")
-                .setWeixinBaseParamter(new WeixinBaseParamter().setToken(token));
+        String ticketurl = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=" + token + "&type=jsapi";
+        String jsticket = HttpUtils.sendGet(ticketurl, null);
 
-        //获取jsticket的执行体
-        String jsticket = null;
-        try {
-            jsticket = HttpUtils.request(weixinActionMethodDefine);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         // 获取到js-SDK的ticket并赋值保存
         String jsapiticket = pareJsonDate(jsticket, "ticket");
         log.info("jsapi_ticket================================================" + jsapiticket);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -511,16 +498,16 @@ public class AllWeiXinService {
      *
      * @param appId 公众号的appid
      * @param appSecret  公众号的appsecret
-     * @param cuatomerNews 消息实体类
+     * @param toJSONString 消息实体类 (无论什么类型的消息可以转换成json类型的)
      * @return 发送成功后的回调
      */
-    public String customerSmsSend(String appId, String appSecret, CuatomerNews cuatomerNews) {
+    public String customerSmsSend(String appId, String appSecret, String toJSONString) {
         AccessToken tokenByCode = allWeiXinRquest.getTokenByCode(appId, appSecret);
         String token = "";
         if (null != tokenByCode) {
             token = tokenByCode.getToken();
         }
-        String toJSONString = JSONObject.toJSONString(cuatomerNews);
+//        String toJSONString = JSONObject.toJSONString(cuatomerNews); //不用实体类,直接转换成json,这样所有的消息类型均可调用这一个接口
         String url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token;
         String jsonResult = "";
         try {
@@ -540,8 +527,6 @@ public class AllWeiXinService {
         }
         return jsonResult;
     }
-
-
 
     /**
      * 生成微信的临时二维码

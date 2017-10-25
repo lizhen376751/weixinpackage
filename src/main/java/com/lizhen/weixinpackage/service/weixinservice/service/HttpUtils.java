@@ -1,16 +1,12 @@
 package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
-import com.lizhen.weixinpackage.modules.weixin.http.HttpMethod;
-import com.lizhen.weixinpackage.modules.weixin.http.ParamterContentType;
-import com.lizhen.weixinpackage.modules.weixin.http.WeixinActionMethodDefine;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -20,7 +16,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -45,71 +44,6 @@ public final class HttpUtils {
      * 隐藏工具类
      */
     private HttpUtils() {
-    }
-
-    /**
-     * get和post请求入口
-     *
-     * @param actionMethodDefine 入参实体类
-     * @return 字符串
-     * @throws URISyntaxException 异常
-     * @throws IOException        网络异常
-     */
-    public static String request(WeixinActionMethodDefine actionMethodDefine) throws URISyntaxException, IOException {
-        InputStream inputStream = null;
-        //获取请求参数
-        Map<String, String> params = actionMethodDefine.getActionConfigParamter();
-        //获取参数集合
-        Set<String> set = params.keySet();
-        //获取post请求参数
-        Map<String, String> actionPostParamter = actionMethodDefine.getActionPostParamter();
-        //获取post参数集合
-        Set<String> postset = actionPostParamter.keySet();
-        //获取请求方式
-        HttpMethod httpMethod = actionMethodDefine.getHttpMethod();
-        //获取请求什么样的数据
-        ParamterContentType paramterContentType = actionMethodDefine.getParamterContentType();
-        // 1. 创建 HttpClient 的实例
-        HttpClient client = new DefaultHttpClient();
-        //2. 创建某种连接方法的实例,构造函数中传入待连接的地址
-        HttpRequestBase request = null;
-        HttpResponse response = null;
-        //构建参数
-        String actionURL = HttpUtils.getActionURL(actionMethodDefine);
-        if (httpMethod.equals(HttpMethod.GET)) {
-            request = new HttpGet();
-            //将参传入
-            request.setURI(new URI(actionURL));
-            request.setHeader("Accept-Encoding", "gzip");
-            // 3. 调用第一步中创建好的实例的 execute 方法来执行第二步中创建好的 method 实例
-            response = client.execute(request);
-        } else if (httpMethod.equals(HttpMethod.POST)) {
-            //在发送post请求时用该list来存放参数(类似于key和value)
-            List<NameValuePair> list = new ArrayList<NameValuePair>();
-            //遍历set集合
-            for (String key : postset) {
-                //存入list里面
-                list.add(new BasicNameValuePair(key, params.get(key)));
-            }
-            HttpPost request1 = new HttpPost(actionURL);
-            request1.setHeader("Accept-Encoding", "gzip");
-            request1.setEntity(new UrlEncodedFormEntity(list, HTTP.UTF_8));
-            // 3. 调用第一步中创建好的实例的 execute 方法来执行第二步中创建好的 method 实例
-            response = client.execute(request1);
-        }
-        //4. 读 response
-        inputStream = response.getEntity().getContent();
-        //6. 对得到后的内容进行处理
-        String result = getJsonStringFromGZIP(inputStream);
-        if (inputStream != null) {
-            //关闭输入流
-            inputStream.close();
-        }
-        log.info("返回的请求结果为:=================================" + result);
-        //5. 释放连接。无论执行方法是否成功，都必须释放连接
-        request.releaseConnection();
-        return result;
-
     }
 
     /**
@@ -339,43 +273,7 @@ public final class HttpUtils {
         return reqUrl + "?" + query.toString();
     }
 
-    /**
-     * 获取业务接口请求URL
-     *
-     * @param actionMethodDefine 业务接口定义
-     * @return 请求URL
-     */
-    public static String getActionURL(WeixinActionMethodDefine actionMethodDefine) {
-        try {
-            StringBuilder sb = new StringBuilder();
-            sb.append(BASE_URL);
-            sb.append(actionMethodDefine.getUri());
-            sb.append("?");
-            //TODO 后期就可以去掉,当做参数传入进来(创建菜单和获取token)
-            if (actionMethodDefine.isIsNeedAppid()) {
-                String appid = actionMethodDefine.getWeixinBaseParamter().getAppid();
-                String secret = actionMethodDefine.getWeixinBaseParamter().getSecret();
-                sb.append("appid").append("=").append(appid).append("&");
-                sb.append("secret").append("=").append(secret).append("&");
-            }
-            //遍历基础参数,添加到url上
-            for (String key : actionMethodDefine.getActionConfigParamter().keySet()) {
-                sb.append(key).append("=").append(actionMethodDefine.getActionConfigParamter().get(key)).append("&");
-            }
-            //判断是否需要access_token
-            if (actionMethodDefine.isIsNeedAccssToken()) {
-                String token = actionMethodDefine.getWeixinBaseParamter().getToken();
-                sb.append("access_token").append("=").append(token);
-                return sb.toString();
-            } else {
-                //将最后一个&去掉
-                return sb.substring(0, sb.length() - 1);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
     //===================================================================
 
 

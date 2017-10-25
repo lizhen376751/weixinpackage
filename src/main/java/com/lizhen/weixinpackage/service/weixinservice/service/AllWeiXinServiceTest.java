@@ -1,5 +1,6 @@
 package com.lizhen.weixinpackage.service.weixinservice.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lizhen.weixinpackage.modules.third.message.module.CuatomerArticlessss;
 import com.lizhen.weixinpackage.modules.third.message.module.CuatomerNews;
 import com.lizhen.weixinpackage.modules.third.message.module.NewsArticles;
@@ -267,7 +268,8 @@ public class AllWeiXinServiceTest {
         list.add(0, newsArticles);
         customerNewsMessage.setArticles(list);
         cuatomerNews.setNews(customerNewsMessage);
-        String customerSmsSend = allWeiXinService.customerSmsSend(WeiXinParam.APPID,WeiXinParam.APPSecret,cuatomerNews);
+        String toJSONString = JSONObject.toJSONString(cuatomerNews);
+        String customerSmsSend = allWeiXinService.customerSmsSend(WeiXinParam.APPID,WeiXinParam.APPSecret,toJSONString);
         log.debug("客服發送圖文消息發送后返回結果=====" + customerSmsSend);
     }
 

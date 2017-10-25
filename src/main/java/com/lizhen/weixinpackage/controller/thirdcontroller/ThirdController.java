@@ -300,7 +300,8 @@ public class ThirdController {
             log.debug("获取授权公众号的授权信息" + authorizationInfo.toString());
             //发送客服消息
             String json = JSONObject.toJSONString(customerText);
-            String kefuxiaoxi = apiAllWeiXiRequest.customerSmsSend(authorizationInfo.getAuthorizerAccessToken(), json);
+            //TODO 注意此时开放平台与公众号获取token的方式不同,相应的方法需要重新写
+            String kefuxiaoxi = apiAllWeiXiRequest.customerSmsSend("appid","appsecret",json);
             log.debug("发送客服消息" + kefuxiaoxi);
         } else {
             /**
