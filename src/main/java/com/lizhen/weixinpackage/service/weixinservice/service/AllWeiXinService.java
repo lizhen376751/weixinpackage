@@ -402,6 +402,7 @@ public class AllWeiXinService {
         packageParams.put("body", sweepPay.getBody());
         packageParams.put("out_trade_no", sweepPay.getOuttradeno());  //商户订单号自定义只要保持唯一性即可
         packageParams.put("total_fee", sweepPay.getTotalfee()); //这个参数是以分为单位,账单中是以元为单位
+//        request.getRemoteAddr(); //真实的获取ip
         packageParams.put("spbill_create_ip", sweepPay.getSpbillcreateip());
         packageParams.put("notify_url", sweepPay.getNotifyurl()); //微信异步通知,填入下面的方法即可
         packageParams.put("trade_type", sweepPay.getTradetype());  //JSAPI(页面调用h5发起)，NATIVE(扫码支付,code_url返回一个二维码)
@@ -493,6 +494,125 @@ public class AllWeiXinService {
     }
 
 
+    /**
+     * 企业向个人付款
+     * @param transfer 企业付款实体类
+     * @return 付款成功后的订单号或者付款失败后的错误原因
+     */
+    public String transfers(Transfer transfer){
+        String url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
+        SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
+        packageParams.put("mch_appid",transfer.getMch_appid());
+        packageParams.put("mchid",transfer.getMchid());
+        packageParams.put("nonce_str",transfer.getNonce_str());
+        packageParams.put("partner_trade_no",transfer.getPartner_trade_no());
+        packageParams.put("openid",transfer.getOpenid());
+        packageParams.put("check_name",transfer.getCheck_name());
+        packageParams.put("amount",transfer.getAmount());
+        packageParams.put("desc",transfer.getDesc());
+        packageParams.put("spbill_create_ip",transfer.getSpbill_create_ip());
+        /**
+         * 此处的sign签名是整合所有不为空的参数生成的,并不是传过来的
+         */
+        String sign = PayCommonUtil.createSign("UTF-8", packageParams, transfer.getKey());
+        packageParams.put("sign", sign);
+        String requestXml = PayCommonUtil.getRequestXml(packageParams);
+        String sendXmlPost = HttpUtils.sendXmlPost(url, requestXml);
+        Map map = null;
+        try {
+            map = XMLUtil.doXMLParse(sendXmlPost);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String returncode = (String) map.get("return_code"); //此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断
+        String returnmsg = (String) map.get("return_msg");
+        if (returnmsg!=null&&!returnmsg.equals("")){
+            log.info("支付失败错误原因为:"+returnmsg);
+            return returnmsg;
+        }
+        if (returncode.equals("SUCCESS")){
+            String result_code = (String) map.get("result_code");
+            if (result_code.equals("SUCCESS")){
+                //商户订单号
+                String partner_trade_no = (String) map.get("partner_trade_no");
+                //微信订单号
+                String payment_no = (String) map.get("payment_no");
+                //微信支付成功时间
+                String payment_time = (String) map.get("payment_time");
+                return partner_trade_no;
+            }
+        }
+        return "请求失败!";
+
+    }
+
+    /**
+     * 查询企业付款接口
+     * @param querytransfer 查询所需要的参数
+     * @return 查询到的转账信息
+     */
+    public ReturnTransfer querytransfers(Querytransfer querytransfer) {
+        ReturnTransfer returnTransfer = new ReturnTransfer();
+        String url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo";
+        SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
+        packageParams.put("nonce_str", querytransfer);
+        packageParams.put("partner_trade_no ", querytransfer);
+        packageParams.put("mch_id", querytransfer);
+        packageParams.put("appid ", querytransfer);
+        String sign = PayCommonUtil.createSign("UTF-8", packageParams, querytransfer.getKey());
+        packageParams.put("sign", sign);
+        String requestXml = PayCommonUtil.getRequestXml(packageParams);
+        String sendXmlPost = HttpUtils.sendXmlPost(url, requestXml);
+        Map map = null;
+        try {
+            map = XMLUtil.doXMLParse(sendXmlPost);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String returncode = (String) map.get("return_code"); //此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断
+        String returnmsg = (String) map.get("return_msg");
+        if (returnmsg != null && !returnmsg.equals("")) {
+            log.info("支付失败错误原因为:" + returnmsg);
+            returnTransfer.setDesc(returnmsg);
+        }
+         if (returncode.equals("SUCCESS")) {
+            String result_code = (String) map.get("result_code");
+            if (result_code.equals("SUCCESS")){
+                String partner_trade_no = (String) map.get("partner_trade_no");
+                String mch_id = (String) map.get("mch_id");
+                String detail_id = (String) map.get("detail_id");
+                String status = (String) map.get("status");
+                if (status.equals("SUCCESS")){
+                    status = "转账成功";
+                } else if (status.equals("FAILED")){
+                    status = "转账失败";
+                }else if (status.equals("PROCESSING")){
+                    status = "处理中";
+                }
+                String reason = (String) map.get("reason");
+                String openid = (String) map.get("openid");
+                String transfer_name = (String) map.get("transfer_name");
+                Integer payment_amount = (Integer) map.get("payment_amount");
+                String transfer_time = (String) map.get("transfer_time");
+                String desc = (String) map.get("desc");
+
+                returnTransfer.setDesc(desc);
+                returnTransfer.setTransfer_name(transfer_name);
+                returnTransfer.setMch_id(mch_id);
+                returnTransfer.setTransfer_time(transfer_time);
+                returnTransfer.setOpenid(openid);
+                returnTransfer.setPayment_amount(payment_amount);
+                returnTransfer.setReason(reason);
+                returnTransfer.setStatus(status);
+                returnTransfer.setDetail_id(detail_id);
+                returnTransfer.setPartner_trade_no(partner_trade_no);
+            }else{
+                String err_code_des = (String) map.get("err_code_des");
+                returnTransfer.setDesc(err_code_des);
+            }
+        }
+        return returnTransfer;
+    }
     /**
      * 客服接口-发送消息
      *

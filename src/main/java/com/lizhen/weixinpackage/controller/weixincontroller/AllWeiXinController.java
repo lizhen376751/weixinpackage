@@ -218,6 +218,17 @@ public class AllWeiXinController {
     }
 
     /**
+     * 企业向个人付款
+     * @param transfer 企业付款实体类
+     * @return 付款成功后的订单号或者付款失败后的错误原因
+     */
+    public String transfers(Transfer transfer){
+        String transfers = weChatTask.transfers(transfer);
+        return transfers;
+    }
+
+
+    /**
      * 客服接口-发送消息
      *
      * @param appId 公众号的appid

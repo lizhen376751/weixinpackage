@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lizhen.iml" filepath="$PROJECT_DIR$/lizhen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixinpackage.iml" filepath="$PROJECT_DIR$/weixinpackage.iml" />
     </modules>
   </component>
 </project>
