@@ -13,6 +13,7 @@ import com.lizhen.weixinpackage.modules.weixin.weixinmessage.ParamSendWeChat;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.Template;
 import com.lizhen.weixinpackage.modules.weixin.weixinmessage.TemplateData;
 import com.lizhen.weixinpackage.service.weixinservice.util.WeiXinParam;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import java.util.Map;
  * Created by Administrator on 2017/10/24.
  */
 public class AllWeiXinServiceTest {
+
 
     /**
      * 日志打印
@@ -250,7 +252,25 @@ public class AllWeiXinServiceTest {
     public void payNotifyUrl() throws Exception {
 
     }
+    @Test
+    public void transfers() throws Exception {
+//        <xml><amount>21016500</amount>
+//        <check_name>NO_CHECK</check_name>
+//        <desc>微信公众号提现</desc>
+//        <mch_appid>wx8aba18d2d947c70f</mch_appid>
+//        <mchid>1490678512</mchid>
+//        <nonce_str>1444049807</nonce_str>
+//        <openid>oF0xCwsEnNJT7AQTnnycx3By0rVA</openid>
+//        <partner_trade_no>1510641844451</partner_trade_no>
+//        <sign><![CDATA[978FFE8DF6BE46236E82C02E610AEAB1]]></sign>
+//        <spbill_create_ip>127.0.0.1</spbill_create_ip>
+//        </xml>
+    }
 
+    @Test
+    public void querytransfers() throws Exception {
+
+    }
     //客服接口-发消息
     @org.junit.Test
     public void customerSmsSend() throws Exception {

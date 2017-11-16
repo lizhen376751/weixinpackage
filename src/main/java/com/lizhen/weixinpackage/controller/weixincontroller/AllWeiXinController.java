@@ -227,9 +227,18 @@ public class AllWeiXinController {
         return transfers;
     }
 
-
+    /**
+     * 查询企业付款接口
+     * @param querytransfer 查询所需要的参数
+     * @return 查询到的转账信息
+     */
+    public ReturnTransfer querytransfers(Querytransfer querytransfer) {
+        ReturnTransfer querytransfers = weChatTask.querytransfers(querytransfer);
+        return querytransfers;
+    }
     /**
      * 客服接口-发送消息
+     *
      *
      * @param appId 公众号的appid
      * @param appSecret  公众号的appsecret

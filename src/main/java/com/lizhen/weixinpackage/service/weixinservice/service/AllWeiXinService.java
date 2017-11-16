@@ -495,6 +495,7 @@ public class AllWeiXinService {
 
 
     /**
+     * TODO 订单号最好由前面传入进来
      * 企业向个人付款
      * @param transfer 企业付款实体类
      * @return 付款成功后的订单号或者付款失败后的错误原因
@@ -504,11 +505,15 @@ public class AllWeiXinService {
         SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
         packageParams.put("mch_appid",transfer.getMch_appid());
         packageParams.put("mchid",transfer.getMchid());
-        packageParams.put("nonce_str",transfer.getNonce_str());
-        packageParams.put("partner_trade_no",transfer.getPartner_trade_no());
+        String currTime = PayCommonUtil.getCurrTime();
+        String strTime = currTime.substring(8, currTime.length());
+        String strRandom = PayCommonUtil.buildRandom(4) + "";
+        packageParams.put("nonce_str",strTime+strRandom);
+        String out_trade_no = new Date().getTime() + "";
+        packageParams.put("partner_trade_no",out_trade_no);
         packageParams.put("openid",transfer.getOpenid());
         packageParams.put("check_name",transfer.getCheck_name());
-        packageParams.put("amount",transfer.getAmount());
+        packageParams.put("amount",transfer.getAmount()+"");
         packageParams.put("desc",transfer.getDesc());
         packageParams.put("spbill_create_ip",transfer.getSpbill_create_ip());
         /**
@@ -540,6 +545,8 @@ public class AllWeiXinService {
                 //微信支付成功时间
                 String payment_time = (String) map.get("payment_time");
                 return partner_trade_no;
+            }else if (map.get("err_code").equals("SYSTEMERROR")){
+                return transfers(transfer);
             }
         }
         return "请求失败!";
@@ -556,9 +563,9 @@ public class AllWeiXinService {
         String url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo";
         SortedMap<Object, Object> packageParams = new TreeMap<Object, Object>();
         packageParams.put("nonce_str", querytransfer);
-        packageParams.put("partner_trade_no ", querytransfer);
+        packageParams.put("partner_trade_no", querytransfer);
         packageParams.put("mch_id", querytransfer);
-        packageParams.put("appid ", querytransfer);
+        packageParams.put("appid", querytransfer);
         String sign = PayCommonUtil.createSign("UTF-8", packageParams, querytransfer.getKey());
         packageParams.put("sign", sign);
         String requestXml = PayCommonUtil.getRequestXml(packageParams);

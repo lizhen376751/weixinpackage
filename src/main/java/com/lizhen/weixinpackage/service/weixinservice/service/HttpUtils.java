@@ -1,25 +1,32 @@
 package com.lizhen.weixinpackage.service.weixinservice.service;
 
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContexts;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.net.ssl.SSLContext;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -98,13 +105,83 @@ public final class HttpUtils {
             }
             log.info("发送微信消息返回结果为:================================" + lines);
             return lines; // 返回请求结果
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "fail";
     }
+
+    /**
+     * 企业付款以及查询需要证书
+     * @param url api接口路径
+     * @param xmlInfo xml信息
+     * @param mchid 商户id
+     * @return 请求信息
+     * 容易出现jar包冲突 httpcore-4.3.2 需要将jar包替换成这个版本的
+     */
+    public static String ssl(String url,String xmlInfo,String mchid){
+        //以下是需要ssl证书的
+        StringBuffer message = new StringBuffer();
+        try {
+            //指定读取证书格式为PKCS12
+            KeyStore keyStore  = KeyStore.getInstance("PKCS12");
+            //读取本机存放的PKCS12证书文件
+            FileInputStream instream = new FileInputStream(new File("D:/cert/apiclient_cert.p12"));
+            //指定PKCS12的密码(商户ID)
+            keyStore.load(instream, mchid.toCharArray());
+
+            SSLContext sslcontext = SSLContexts.custom()
+                    .loadKeyMaterial(keyStore, mchid.toCharArray())
+                    .build();
+            //指定TLS版本
+            SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
+                    sslcontext,
+                    new String[] { "TLSv1" },
+                    null,
+                    SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+            //设置httpclient的SSLSocketFactory
+            CloseableHttpClient httpclient = HttpClients.custom()
+                    .setSSLSocketFactory(sslsf)
+                    .build();
+            HttpPost httpost = new HttpPost(url);
+
+            httpost.addHeader("Connection", "keep-alive");
+            httpost.addHeader("Accept", "*/*");
+            httpost.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            httpost.addHeader("Host", "api.mch.weixin.qq.com");
+            httpost.addHeader("X-Requested-With", "XMLHttpRequest");
+            httpost.addHeader("Cache-Control", "max-age=0");
+            httpost.addHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) ");
+            httpost.setEntity(new StringEntity(xmlInfo, "UTF-8"));
+            //System.out.println("executing request" + httpost.getRequestLine());
+
+            CloseableHttpResponse response = httpclient.execute(httpost);
+            try {
+                HttpEntity entity = response.getEntity();
+
+                //System.out.println("----------------------------------------");
+                //System.out.println(response.getStatusLine());
+                if (entity != null) {
+                    //System.out.println("Response content length: " + entity.getContentLength());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent(),"UTF-8"));
+                    String text;
+                    while ((text = bufferedReader.readLine()) != null) {
+                        message.append(text);
+                    }
+                }
+                EntityUtils.consume(entity);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                response.close();
+            }
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+
+        return message.toString();
+    }
+
 
     /**
      * @param reqUrl reqUrl
