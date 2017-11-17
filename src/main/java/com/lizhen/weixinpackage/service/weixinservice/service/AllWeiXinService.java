@@ -469,6 +469,7 @@ public class AllWeiXinService {
      * @param response 相应
      */
     public void payNotifyUrl(HttpServletRequest request, HttpServletResponse response) {
+        NotifyWxpay notifyWxpay = new NotifyWxpay();
         String inputLine;
         String result = ""; //获取到的xml信息
         Map<Object, Object> map = null;
@@ -483,6 +484,33 @@ public class AllWeiXinService {
                 boolean b = PayCommonUtil.verifyWeixinNotify(map);
                 if (b) {
                     //TODO 订单处理,例如将相关数据存入到数据库中
+                    String appid = (String) map.get("appid");
+                    notifyWxpay.setAppid(appid);
+                    String mch_id = (String) map.get("mch_id");
+                    notifyWxpay.setMch_id(mch_id);
+                    String device_info = (String) map.get("device_info");
+                    notifyWxpay.setDevice_info(device_info);
+                    String nonce_str = (String) map.get("nonce_str");
+                    
+                    String sign = (String) map.get("sign");
+                    String sign_type = (String) map.get("sign_type");
+                    String result_code = (String) map.get("result_code");
+                    String  err_code  = (String) map.get("err_code");
+                    String err_code_des = (String) map.get("err_code_des");
+                    String openid = (String) map.get("openid");
+                    String is_subscribe = (String) map.get("is_subscribe");
+                    String trade_type = (String) map.get("trade_type");
+                    String bank_type = (String) map.get("bank_type");
+                    String total_fee = (String) map.get("total_fee");
+                    String settlement_total_fee = (String) map.get("settlement_total_fee");
+                    String fee_type = (String) map.get("fee_type");
+                    String cash_fee = (String) map.get("cash_fee");
+                    String cash_fee_type = (String) map.get("cash_fee_type");
+                    String transaction_id = (String) map.get("transaction_id");
+                    String returncode = (String) map.get("return_code");
+                    String out_trade_no = (String) map.get("out_trade_no");
+                    String attach = (String) map.get("attach");
+                    String time_end = (String) map.get("time_end");
                     response.getWriter().write(PayCommonUtil.setXML("SUCCESS", "OK")); // 告诉微信服务器，我收到信息了，不要在调用回调action了
                 }
             }
