@@ -2,7 +2,6 @@ package com.lizhen.weixinpackage.controller.thirdcontroller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
 import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
 import com.lizhen.weixinpackage.modules.third.commonwx.module.AESParams;
 import com.lizhen.weixinpackage.modules.third.commonwx.module.ComponentAccessToken;
@@ -12,6 +11,9 @@ import com.lizhen.weixinpackage.modules.third.message.module.CustomerText;
 import com.lizhen.weixinpackage.modules.third.message.module.TextContent;
 import com.lizhen.weixinpackage.service.thirdservice.aes.AesException;
 import com.lizhen.weixinpackage.service.thirdservice.service.ThirdService;
+import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
+import com.lizhen.weixinpackage.service.weixinservice.service.MsgDispatcher;
+import com.lizhen.weixinpackage.service.weixinservice.service.SignUtil;
 import com.lizhen.weixinpackage.service.weixinservice.util.ThirdUtil;
 import com.lizhen.weixinpackage.service.weixinservice.util.XMLUtil;
 import org.dom4j.Document;
@@ -47,12 +49,12 @@ public class ThirdController {
      */
     private static Logger log = LoggerFactory.getLogger(ThirdController.class);
 //====================================================================================================
-
     /**
-     * 引入消息处理接口
+     * 引入微信服务所有方法
      */
     @Autowired
-    private AllWeiXinController apiAllWeiXiRequest;
+    private AllWeiXinService weChatTask;
+
 
     /**
      * 第三方开发接口
@@ -121,7 +123,7 @@ public class ThirdController {
         /**
          * 判断是否是授权的公众号发来的消息
          */
-        boolean isValid = apiAllWeiXiRequest.checkSignature(signature, timestamp, nonce, ThirdUtil.TOKEN);
+        boolean isValid = SignUtil.checkSignature(signature, timestamp, nonce, ThirdUtil.TOKEN);
         log.debug("处理十分钟推送过来的授权事件的====是否加密" + isValid);
         if (isValid) {
             StringBuilder sb = new StringBuilder();
@@ -273,7 +275,7 @@ public class ThirdController {
         } catch (org.jdom.JDOMException e) {
             e.printStackTrace();
         }
-        String receivemessage = apiAllWeiXiRequest.receivemessage(map);
+        String receivemessage = MsgDispatcher.processMessage(map);
         Document doc = DocumentHelper.parseText(receivemessage);
         Element rootElt = doc.getRootElement();
         String msgType = rootElt.elementText("MsgType");
@@ -301,7 +303,7 @@ public class ThirdController {
             //发送客服消息
             String json = JSONObject.toJSONString(customerText);
             //TODO 注意此时开放平台与公众号获取token的方式不同,相应的方法需要重新写
-            String kefuxiaoxi = apiAllWeiXiRequest.customerSmsSend("appid","appsecret",json);
+            String kefuxiaoxi = weChatTask.customerSmsSend("appid","appsecret",json);
             log.debug("发送客服消息" + kefuxiaoxi);
         } else {
             /**

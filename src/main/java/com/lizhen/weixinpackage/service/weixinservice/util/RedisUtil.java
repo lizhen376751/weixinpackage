@@ -9,6 +9,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * redis通过连接池获取数据
  * Created by lizhen on 2017/6/10.
  */
+
 public final class RedisUtil {
 
     /**

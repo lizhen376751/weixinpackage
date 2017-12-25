@@ -55,6 +55,7 @@ public class AuthorizationInfoService {
         AuthorizationInfo authorizationInfo = new AuthorizationInfo();
         authorizationInfo.setAuthorizerAppid(appid);
         Long time = new Date().getTime() / 1000;
+        //TODO 数据库中获取数据
         authorizationInfo = authorizationInfoDao.getAuthorizationInfo(authorizationInfo);
         if (null != authorizationInfo) {
             Long authorizationInfoTime = authorizationInfo.getAuthorizationInfoTime();
@@ -102,13 +103,16 @@ public class AuthorizationInfoService {
             String funcInfo = allWeiXinService.pareJsonDate(authorizationInfo1, "func_info");
             authorizationInfo.setAuthorizerAppid(authorizerAppid).setAuthorizerRefreshToken(authorizerRefreshToken)
                     .setAuthorizerAccessToken(authorizerAccessToken).setExpiresIn(expiresIn).setFuncInfo(funcInfo).setAuthorizationInfoTime(time - 60);
+            //TODO 数据库中获取数据
             AuthorizationInfo authorizationInfo2 = authorizationInfoDao.getAuthorizationInfo(authorizationInfo);
             Integer integer = null;
             if (null != authorizationInfo2) {
+                //TODO 数据库中获取数据
                  integer = authorizationInfoDao.updateAuthorizationInfo(authorizationInfo);
                 log.info("之前授权过,进行修改" + authorizationInfo.toString());
                 return authorizationInfo;
             }
+            //TODO 数据库中获取数据
              integer = authorizationInfoDao.addAuthorizationInfo(authorizationInfo);
             log.info("新增授权id" + integer + ",新增授权信息  = " + authorizationInfo.toString());
         } catch (Exception e) {
@@ -149,6 +153,7 @@ public class AuthorizationInfoService {
             String authorizerRefreshToken = allWeiXinService.pareJsonDate(sendPost, "authorizer_refresh_token");
             authorizationInfo.setAuthorizerRefreshToken(authorizerRefreshToken).setAuthorizerAccessToken(authorizerAccessToken).
                     setExpiresIn(expiresIn).setAuthorizationInfoTime(time - 600);
+            //TODO 数据库中获取数据
             Integer integer = authorizationInfoDao.updateAuthorizationInfo(authorizationInfo);
             log.debug("刷新令牌保存成功" + integer);
         } catch (Exception e) {
@@ -168,6 +173,7 @@ public class AuthorizationInfoService {
      */
 
     public Integer deletAuthorizationInfo(AuthorizationInfo authorizationInfo) {
+        //TODO 数据库中获取数据
         return authorizationInfoDao.deletAuthorizationInfo(authorizationInfo);
     }
 

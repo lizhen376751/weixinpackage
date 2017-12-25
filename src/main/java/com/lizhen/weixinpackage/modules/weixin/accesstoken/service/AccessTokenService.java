@@ -45,6 +45,7 @@ public class AccessTokenService {
         AccessToken accessToken = new AccessToken();
         accessToken.setAppid(appid);
         Long time = new Date().getTime() / 1000;
+        //TODO 数据库获取
         accessToken = accessTokenDao.getAccessToken(accessToken);
         //不为空就在数据库中获取,过期了就重新刷新
         if (null != accessToken) {
@@ -54,6 +55,7 @@ public class AccessTokenService {
                 //如果失效,重新获取
                 if (time - authorizationInfoTime > expiresIn) {
                     accessToken = addAccessToken(appid, appSecret);
+                    //TODO 数据库获取
                     Integer integer = accessTokenDao.updateAccessToken(accessToken);
                     log.debug("刷新token的id" + integer);
                     return accessToken;
@@ -61,11 +63,13 @@ public class AccessTokenService {
                 return accessToken;
             } else {
                 accessToken = addAccessToken(appid, appSecret);
+                //TODO 数据库获取
                 Integer integer = accessTokenDao.updateAccessToken(accessToken);
             }
 
         }
         accessToken = addAccessToken(appid, appSecret);
+        //TODO 数据库获取
         Integer integer = accessTokenDao.addAccessToken(accessToken);
         log.debug("新增token的id" + integer);
         return accessToken;

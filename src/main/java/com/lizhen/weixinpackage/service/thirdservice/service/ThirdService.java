@@ -3,14 +3,13 @@ package com.lizhen.weixinpackage.service.thirdservice.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lizhen.weixinpackage.modules.third.authorizationinfo.module.AuthorizationInfo;
+import com.lizhen.weixinpackage.modules.third.authorizationinfo.service.AuthorizationInfoService;
 import com.lizhen.weixinpackage.modules.third.commonwx.module.*;
 import com.lizhen.weixinpackage.modules.weixin.weixinconfig.module.WeiXinConfig;
 import com.lizhen.weixinpackage.service.thirdservice.aes.AesException;
 import com.lizhen.weixinpackage.service.thirdservice.aes.WXBizMsgCrypt;
-import com.lizhen.weixinpackage.modules.third.authorizationinfo.service.AuthorizationInfoService;
 import com.lizhen.weixinpackage.service.weixinservice.service.AllWeiXinService;
 import com.lizhen.weixinpackage.service.weixinservice.service.HttpUtils;
-import com.lizhen.weixinpackage.service.weixinservice.util.RedisUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -35,11 +34,7 @@ public class ThirdService {
      * 日志打印
      */
     private static Logger log = LoggerFactory.getLogger(ThirdService.class);
-    /**
-     * redis util
-     */
-    @Autowired
-    private RedisUtil redisUtil;
+
     /**
      * 引用解析的json字符串的方法
      */

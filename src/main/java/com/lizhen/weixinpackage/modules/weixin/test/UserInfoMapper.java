@@ -1,22 +1,41 @@
 package com.lizhen.weixinpackage.modules.weixin.test;
 
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by lizhen on 2017/9/19.
  */
-public interface  UserInfoMapper {
-    int deleteByPrimaryKey(Integer id);
+@Service
+public class  UserInfoMapper {
+    public int deleteByPrimaryKey(Integer id){
+        return 1;
+    }
 
-    int insert(UserInfo record);
+    public int insert(UserInfo record){
+        return 1;
+    }
 
-    int insertSelective(UserInfo record);
+    public int insertSelective(UserInfo record){
+        return  1;
+    }
 
-    UserInfo selectByPrimaryKey(Integer id);
+    public UserInfo selectByPrimaryKey(Integer id){
+        return new UserInfo();
+    }
 
-    int updateByPrimaryKeySelective(UserInfo record);
+    public int updateByPrimaryKeySelective(UserInfo record){
+        return 1;
+    }
 
-    int updateByPrimaryKey(UserInfo record);
+    public int updateByPrimaryKey(UserInfo record){
+        return 1;
+    }
 
-    List<UserInfo> selectAll();
+    public List<UserInfo> selectAll(){
+        return new ArrayList<UserInfo>();
+    }
+
 }

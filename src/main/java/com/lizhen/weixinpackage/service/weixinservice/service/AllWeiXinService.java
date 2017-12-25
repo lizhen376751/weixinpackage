@@ -1,7 +1,6 @@
 package com.lizhen.weixinpackage.service.weixinservice.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lizhen.weixinpackage.controller.weixincontroller.AllWeiXinController;
 import com.lizhen.weixinpackage.modules.weixin.accesstoken.service.AccessTokenService;
 import com.lizhen.weixinpackage.modules.weixin.menu.Menu;
 import com.lizhen.weixinpackage.modules.weixin.parammodule.*;
@@ -45,11 +44,7 @@ public class AllWeiXinService {
     @Autowired
     private AccessTokenService accessTokenService;
 
-    /**
-     * 微信相关请求
-     */
-    @Autowired
-    private AllWeiXinController allWeiXinRquest;
+
 
     /**
      * TODO 需要安装redis 利用redis获取token
@@ -269,7 +264,7 @@ public class AllWeiXinService {
      * @return 微信用户
      */
     public WeiXinUserInfo getWeiXinUserInfoByOpenid(String shopCode, String lmcode, String openid) {
-        AccessToken tokenByCode = allWeiXinRquest.getTokenByCode(shopCode, lmcode);
+        AccessToken tokenByCode =accessTokenService.getAccessToken(shopCode, lmcode);
         String url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + tokenByCode.getToken() + "&openid=" + openid + "&lang=zh_CN";
         try {
             String s = HttpUtils.sendGet(url, null);
@@ -491,26 +486,43 @@ public class AllWeiXinService {
                     String device_info = (String) map.get("device_info");
                     notifyWxpay.setDevice_info(device_info);
                     String nonce_str = (String) map.get("nonce_str");
-                    
+                    notifyWxpay.setNonce_str(nonce_str);
                     String sign = (String) map.get("sign");
+                    notifyWxpay.setSign(sign);
                     String sign_type = (String) map.get("sign_type");
+                    notifyWxpay.setSign_type(sign_type);
                     String result_code = (String) map.get("result_code");
-                    String  err_code  = (String) map.get("err_code");
+                    notifyWxpay.setResult_code(result_code);
+                    String err_code  = (String) map.get("err_code");
+                    notifyWxpay.setErr_code(err_code);
                     String err_code_des = (String) map.get("err_code_des");
+                    notifyWxpay.setErr_code_des(err_code_des);
                     String openid = (String) map.get("openid");
+                    notifyWxpay.setOpenid(openid);
                     String is_subscribe = (String) map.get("is_subscribe");
+                    notifyWxpay.setIs_subscribe(is_subscribe);
                     String trade_type = (String) map.get("trade_type");
+                    notifyWxpay.setTrade_type(trade_type);
                     String bank_type = (String) map.get("bank_type");
                     String total_fee = (String) map.get("total_fee");
+                    notifyWxpay.setTotal_fee(total_fee);
                     String settlement_total_fee = (String) map.get("settlement_total_fee");
+                    notifyWxpay.setSettlement_total_fee(settlement_total_fee);
                     String fee_type = (String) map.get("fee_type");
+                    notifyWxpay.setFee_type(fee_type);
                     String cash_fee = (String) map.get("cash_fee");
+                    notifyWxpay.setCash_fee(cash_fee);
                     String cash_fee_type = (String) map.get("cash_fee_type");
                     String transaction_id = (String) map.get("transaction_id");
+                    notifyWxpay.setTransaction_id(transaction_id);
                     String returncode = (String) map.get("return_code");
+                    notifyWxpay.setResult_code(returncode);
                     String out_trade_no = (String) map.get("out_trade_no");
+                    notifyWxpay.setOut_trade_no(out_trade_no);
                     String attach = (String) map.get("attach");
+                    notifyWxpay.setAttach(attach);
                     String time_end = (String) map.get("time_end");
+                    notifyWxpay.setTime_end(time_end);
                     response.getWriter().write(PayCommonUtil.setXML("SUCCESS", "OK")); // 告诉微信服务器，我收到信息了，不要在调用回调action了
                 }
             }
@@ -657,7 +669,7 @@ public class AllWeiXinService {
      * @return 发送成功后的回调
      */
     public String customerSmsSend(String appId, String appSecret, String toJSONString) {
-        AccessToken tokenByCode = allWeiXinRquest.getTokenByCode(appId, appSecret);
+        AccessToken tokenByCode = accessTokenService.getAccessToken(appId, appSecret);
         String token = "";
         if (null != tokenByCode) {
             token = tokenByCode.getToken();
@@ -694,7 +706,7 @@ public class AllWeiXinService {
 //        或者也可以使用以下POST数据创建字符串形式的二维码参数：{"expire_seconds": 604800, "action_name": "QR_STR_SCENE", "action_info": {"scene": {"scene_str": "test"}}}
         String shopCode = ticket.getShopCode();
         String lmcode = ticket.getLmcode();
-        AccessToken tokengetTicket = allWeiXinRquest.getTokenByCode(shopCode, lmcode);
+        AccessToken tokengetTicket = accessTokenService.getAccessToken(shopCode, lmcode);
         String url = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=" + tokengetTicket.getToken();
         String json = "{\"expire_seconds\": 2592000, \"action_name\": \"QR_STR_SCENE\", \"action_info\": {\"scene\": {\"scene_str\": \"" + ticket.getSceneStr() + "\"}}}";
         try {
